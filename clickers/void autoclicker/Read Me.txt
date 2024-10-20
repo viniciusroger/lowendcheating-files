@@ -1,0 +1,59 @@
+=========================================
+      WELCOME TO VOID CLICKER v1.3
+
+  Discord User: mp3#6239
+  Minecraft User: VYLX
+=========================================
+              IMPORTANT 
+
+  *  When you start the autoclicker, you
+     will no longer be able to change any
+     of the settings. This is a limitation
+     of the code. If you want to change your
+     settings at any point, you will need
+     to press the stop button which will
+     stop the autoclicker and you will be
+     able to change the cps values again.
+
+  *  If you hear any beeping while using 
+     this, just ignore it. Its an invalid
+     input.
+
+  *  To bypass any screenshare, close Void
+     Clicker, run the Self-Destruct.bat file
+     , click on Void Clicker and press the
+     "shift" + "delete" keys, at once.
+=========================================
+            VERY IMPORTANT 
+  *  YOU MUST START THE CLICKER BEFORE 
+     YOU CAN TOGGLE IT ON
+
+  *  IF THE CLICKER STARTS, THEN FLASHES
+     TEXT, THEN CLOSES DO THIS TO FIX IT:
+     OPEN SETTINGS > UPDATE & SECURITY > 
+     WINDOWS SECURITY > VIRUS & THREAT
+     PROTECTION > OPEN THE CLICKER > PRESS
+     "V" > WINDOWS WILL DETECT A THREAT >
+     CLICK ON IT > SELECT "ALLOW ON DEVICE"
+     > THEN PRESS THE "START ACTIONS" 
+     BUTTON. Windows detects this as a virus
+     because the way it was coded. This is
+     called a "false positive". Please
+     don't hesitate to contact me on 
+     Discord for any questions or concerns.
+==========================================
+                KEYBINDS
+
+KEYBINDS:
+ W and S - Move up and down    
+ A and D - Change values      
+ Q       - Swap between buttons  
+ E       - Toggle autoclicker 
+ V       - Start the clicker   
+=========================================
+    THANK YOU FOR USING VOID CLICKER
+                Credits:
+
+         Vylx/mp3#6239 - Developer
+             Exro#4981 - Inspired GUI
+=========================================

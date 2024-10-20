@@ -1,0 +1,2300 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="stylesheets/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+<body>
+<div class="row">
+    <div class="col-3">
+        <div aria-orientation="vertical" style="height: 100%; width: 23%; position: fixed; background-color: rgba(12, 12, 13, 0.4)">
+            <div class="navbar-brand">
+                <h4 style="font-weight: 300">Zyklon</h4>
+                <h6 style="font-weight: 300; font-size: .95rem">Cloud Configuration</h6>
+            </div>
+            <ul class="nav nav-pills" role="tablist" style="max-height: 80%; overflow-y: scroll; border-top: 1px solid #27272b; border-bottom: 1px solid #27272b">
+                <li style="width: 100%">
+                    <a class="nav-link active" id="home-tab" data-toggle="pill" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fas fa-home fa-fw"></i> &nbsp;Home</a>
+                </li>
+                <li style="width: 100%">
+                    <a class="nav-link" id="autoclicker-tab" data-toggle="pill" href="#autoclicker" role="tab" aria-controls="autoclicker" aria-selected="false"><i class="fas fa-mouse-pointer fa-fw"></i> &nbsp;AutoClicker</a>
+                </li>
+                <li style="width: 100%">
+                    <a class="nav-link" id="aimbot-tab" data-toggle="pill" href="#aimbot" role="tab" aria-controls="aimbot" aria-selected="false"><i class="fas fa-crosshairs fa-fw"></i> &nbsp;Aimbot</a>
+                </li>
+               <li style="width: 100%">
+                    <a class="nav-link" id="wtap-tab" data-toggle="pill" href="#wtap" role="tab" aria-controls="wtap" aria-selected="false"><i class="fas fa-angle-double-up fa-fw"></i> &nbsp;WTap</a>
+                </li>
+               <li style="width: 100%">
+                    <a class="nav-link" id="reach-tab" data-toggle="pill" href="#reach" role="tab" aria-controls="reach"aria-selected="false"><i class="fas fa-hand-paper fa-fw"></i> &nbsp;Reach</a>
+                </li>
+               <li style="width: 100%">
+                    <a class="nav-link" id="hitboxes-tab" data-toggle="pill" href="#hitboxes" role="tab" aria-controls="hitboxes" aria-selected="false"><i class="fas fa-cube fa-fw"></i> &nbsp;HitBoxes</a>
+                </li>
+                <li style="width: 100%">
+                    <a class="nav-link" id="velocity-tab" data-toggle="pill" href="#velocity" role="tab" aria-controls="velocity" aria-selected="false"><i class="fas fa-arrows-alt fa-fw"></i> &nbsp;Velocity</a>
+                </li>
+                <li style="width: 100%">
+                    <a class="nav-link" id="throwpot-tab" data-toggle="pill" href="#throwpot" role="tab" aria-controls="throwpot" aria-selected="false"><i class="fas fa-prescription-bottle-alt fa-fw"></i> &nbsp;ThrowPot</a>
+                </li>
+               <li style="width: 100%">
+                    <a class="nav-link" id="refill-tab" data-toggle="pill" href="#refill" role="tab" aria-controls="refill" aria-selected="false"><i class="fas fa-redo fa-fw"></i> &nbsp;Refill</a>
+                </li>
+               <li style="width: 100%">
+                    <a class="nav-link" id="fakelag-tab" data-toggle="pill" href="#fakelag" role="tab" aria-controls="fakelag" aria-selected="false"><i class="fas fa-wifi fa-fw"></i> &nbsp;Fake Lag</a>
+                </li>
+               <li style="width: 100%">
+                    <a class="nav-link" id="visuals-tab" data-toggle="pill" href="#visuals" role="tab" aria-controls="visuals" aria-selected="false"><i class="far fa-eye fa-fw"></i> &nbsp;Visuals</a>
+                </li>
+               <li style="width: 100%">
+                    <a class="nav-link" id="players-tab" data-toggle="pill" href="#players" role="tab" aria-controls="players" aria-selected="false"><i class="far fa-user fa-fw"></i> &nbsp;Player List</a>
+                </li>
+                <li style="width: 100%">
+                    <a class="nav-link" id="keybinds-tab" data-toggle="pill" href="#keybinds" role="tab" aria-controls="keybinds" aria-selected="false"><i class="far fa-keyboard fa-fw"></i> &nbsp;Key Binds</a>
+                </li>
+                <li style="width: 100%">
+                    <a class="nav-link" id="plugins-tab" data-toggle="pill" href="#plugins" role="tab" aria-controls="plugins" aria-selected="false"><i class="fas fa-code"></i> &nbsp;Plugins</a>
+                </li>
+           </ul>
+        </div>
+    </div>
+    <div class="col-9">
+        <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <h4>Home</h4>
+                <p><b>Build Date</b>: 12/1/2020</p>
+                <p><b>Build Version</b>: 4.1</p>
+                <p><b>Changelog</b>:<br>
+                • Added support for Mac and Linux<br>
+                • Added Plugins
+                </p>
+                <div>
+                    <label for="refresh-rate-label" title="How often (in seconds) the client should re-apply settings from your configuration">Refresh Rate</label>
+                    <input type="text" id="refresh-rate-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0)">
+                    <div id="refresh-rate" style="width: 95%"></div>
+                </div>
+                <div style="margin-top: 24px">
+                    <button class="btn btn-primary" type="button" id="apply">Apply Settings</button>
+                    <button class="btn btn-primary" type="button" id="self-destruct" style="margin-left: 10px">Self Destruct</button>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="autoclicker" role="tabpanel" aria-labelledby="autoclicker-tab">
+                <h4 title="Clicks when holding down your mouse">AutoClicker</h4>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="autoclicker-enabled">
+                    <label class="form-check-label" for="autoclicker-enabled" title="Enable AutoClicker">Enabled</label>
+                    <br>
+                    <input type="checkbox" class="form-check-input" id="autoclicker-req-item">
+                    <label class="form-check-label" for="autoclicker-req-item" title="AutoClicker will only activate if you are holding an item from the Item Whitelist">Require Item</label>
+                </div>
+                <div>
+                    <label for="autoclicker-CPS-label" title="Clicks Per Second">CPS</label>
+                    <input type="text" id="autoclicker-CPS-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="autoclicker-CPS" style="width: 95%"></div>
+                </div>
+                <br>
+                <div>
+                    <label for="autoclicker-item-whitelist" title="If Require Item is enabled, AutoClicker will activate only if you are holding an item from this whitelist&#013;Items are in the form of IDs and are separated with commas">Item Whitelist</label>
+                    <br>
+                    <textarea id="autoclicker-item-whitelist"></textarea>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="aimbot" role="tabpanel" aria-labelledby="aimbot-tab">
+                <h4 title="Aims at other players">Aimbot</h4>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="aimbot-enabled">
+                    <label class="form-check-label" for="aimbot-enabled" title="Enable Aimbot">Enabled</label>
+                    <br>
+                    <input type="checkbox" class="form-check-input" id="aimbot-req-item">
+                    <label class="form-check-label" for="aimbot-req-item" title="Aimbot will activate only if you are holding an item from the Item Whitelist">Require Item</label>
+                    <br>
+                    <input type="checkbox" class="form-check-input" id="aimbot-req-mouse" title="Aimbot will activate only if your mouse is held down">
+                    <label class="form-check-label" for="aimbot-req-mouse" title="Aimbot will activate only if your mouse is held down">Require Mouse</label>
+                </div>
+                <div style="margin-bottom: 16px">
+                    <label for="aimbot-target" title="How the Aimbot should prioritize targets&#013;FOV: Aims at the player closest to the center of your FOV (Field of Vision), AKA crosshair&#013;Distance: Aims at the player closest to your position&#013;Lowest Health: Aims at the player with the lowest amount of health&#013;Random: Aims at a randomly selected player">Target Selection</label><br>
+                    <select name="aimbot-target" id="aimbot-target">
+                        <option value="0">FOV</option>
+                        <option value="1">Distance</option>
+                        <option value="2">Lowest Health</option>
+                        <option value="3">Random</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="aimbot-yaw-smooth-label" title="How smoothly the Aimbot should aim to the target horizontally">Smooth (Yaw)</label>
+                    <input type="text" id="aimbot-yaw-smooth-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="aimbot-yaw-smooth" style="width: 95%"></div>
+                </div>
+                <br>
+                <div>
+                    <label for="aimbot-pitch-smooth-label" title="How smoothly the Aimbot should aim to the target vertically">Smooth (Pitch)</label>
+                    <input type="text" id="aimbot-pitch-smooth-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="aimbot-pitch-smooth" style="width: 95%"></div>
+                </div>
+                <br>
+                <div>
+                    <label for="aimbot-delay-label" title="How far back (in milliseconds) Aimbot will aim at history positions">Aim Delay</label>
+                    <input type="text" id="aimbot-delay-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="aimbot-delay" style="width: 95%"></div>
+                </div>
+                <br>
+                <div>
+                    <label for="aimbot-rand-point-label" title="How often (in milliseconds) the Aimbot will randomly select a new point to aim at">Randomize Aim Point</label>
+                    <input type="text" id="aimbot-rand-point-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="aimbot-rand-point" style="width: 95%"></div>
+                </div>
+                <br>
+                <div>
+                    <label for="aimbot-points-scale-label" title="How far away Aimbot aim points (5) will space from eachother">Points Scale</label>
+                    <input type="text" id="aimbot-points-scale-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="aimbot-points-scale" style="width: 95%"></div>
+                </div>
+                <br>
+                <div>
+                    <label for="aimbot-dist-label" title="Maximum distance player needs to be from you to allow Aimbot to activate">Distance</label>
+                    <input type="text" id="aimbot-dist-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="aimbot-dist" style="width: 95%"></div>
+                </div>
+                <br>
+                <div>
+                    <label for="aimbot-fov-label" title="Maximum FOV (Field of Vision) player needs to be within your crosshair for Aimbot to activate">FOV</label>
+                    <input type="text" id="aimbot-fov-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="aimbot-fov" style="width: 95%"></div>
+                </div>
+                <br>
+                <div>
+                    <label for="aimbot-item-whitelist" title="If Require Item is enabled, Aimbot will activate only if you are holding an item from this whitelist&#013;Items are in the form of IDs and are separated with commas">Item Whitelist</label>
+                    <br>
+                    <textarea id="aimbot-item-whitelist"></textarea>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="wtap" role="tabpanel" aria-labelledby="wtap-tab">
+                <h4 title="Resets forward movement when moving towards a target">WTap</h4>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="wtap-enabled">
+                    <label class="form-check-label" for="wtap-enabled" title="Enable WTap">Enabled</label>
+                    <br>
+                    <input type="checkbox" class="form-check-input" id="wtap-req-item">
+                    <label class="form-check-label" for="wtap-req-item" title="WTap will activate only if you are holding an item from the Item Whitelist">Require Item</label>
+                </div>
+                <div>
+                    <label for="wtap-tap-delay-label" title="Amount of time (in milliseconds) to wait before WTap activates">Tap Delay</label>
+                    <input type="text" id="wtap-tap-delay-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="wtap-tap-delay" style="width: 95%"></div>
+                </div>
+                <br>
+                <div>
+                    <label for="wtap-dist-label" title="Maximum distance player needs to be from you to allow WTap to activate">Distance</label>
+                    <input type="text" id="wtap-dist-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="wtap-dist" style="width: 95%"></div>
+                </div>
+                <br>
+                <div>
+                    <label for="wtap-fov-label" title="Maximum FOV (Field of Vision) player needs to be within your crosshair for WTap to activate">FOV</label>
+                    <input type="text" id="wtap-fov-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="wtap-fov" style="width: 95%"></div>
+                </div>
+                <br>
+                <div>
+                    <label for="wtap-item-whitelist" title="If Require Item is enabled, WTap will activate only if you are holding an item from this whitelist&#013;Items are in the form of IDs and are separated with commas">Item Whitelist</label>
+                    <br>
+                    <textarea id="wtap-item-whitelist"></textarea>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="reach" role="tabpanel" aria-labelledby="reach-tab">
+                <h4 title="Extends the distance allowed for you to be able to attack a player">Reach</h4>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="reach-enabled">
+                    <label class="form-check-label" for="reach-enabled" title="Enable Reach">Enabled</label>
+                    <br>
+                    <input type="checkbox" class="form-check-input" id="reach-req-item">
+                    <label class="form-check-label" for="reach-req-item" title="Reach will activate only if you are holding an item from the Item Whitelist">Require Item</label>
+                    <br>
+                    <input type="checkbox" class="form-check-input" id="reach-req-sprint">
+                    <label class="form-check-label" for="reach-req-sprint" title="Reach will activate only if you are sprinting">Require Sprint</label>
+                </div>
+                <div>
+                    <label for="reach-expansion-label" title="How much extra reach you will be given (Normally 3.0)">Expansion</label>
+                    <input type="text" id="reach-expansion-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="reach-expansion" style="width: 95%"></div>
+                </div>
+                <br>
+                <div>
+                    <label for="reach-item-whitelist" title="If Require Item is enabled, Reach will activate only if you are holding an item from this whitelist&#013;Items are in the form of IDs and are separated with commas">Item Whitelist</label>
+                    <br>
+                    <textarea id="reach-item-whitelist"></textarea>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="hitboxes" role="tabpanel" aria-labelledby="hitboxes-tab">
+                <h4 title="Expands player hitboxes">HitBoxes</h4>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="hitboxes-enabled">
+                    <label class="form-check-label" for="hitboxes-enabled" title="Enable HitBoxes">Enabled</label>
+                    <br>
+                    <input type="checkbox" class="form-check-input" id="hitboxes-req-item">
+                    <label class="form-check-label" for="hitboxes-req-item" title="HitBoxes will activate only if you are holding an item from the Item Whitelist">Require Item</label>
+                    <br>
+                    <input type="checkbox" class="form-check-input" id="hitboxes-req-sprint">
+                    <label class="form-check-label" for="hitboxes-req-sprint" title="HitBoxes will activate only if you are sprinting">Require Sprint</label>
+                </div>
+                <div>
+                    <label for="hitboxes-expansion-label" title="How much larger other player hitboxes will be (Normally 0.1)">Expansion</label>
+                    <input type="text" id="hitboxes-expansion-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="hitboxes-expansion" style="width: 95%"></div>
+                </div>
+                <br>
+                <div>
+                    <label for="hitboxes-item-whitelist" title="If Require Item is enabled, HitBoxes will activate only if you are holding an item from this whitelist&#013;Items are in the form of IDs and are separated with commas">Item Whitelist</label>
+                    <br>
+                    <textarea id="hitboxes-item-whitelist"></textarea>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="velocity" role="tabpanel" aria-labelledby="velocity-tab">
+                <h4 title="Modifies player knockback">Velocity</h4>
+                <div> 
+                    <div style="width: 95%" class="alert alert-danger alert-dismissible fade show">
+                        <b>NOTICE</b>: In Minecraft, the Z and Y axes are inverted. Zyklon refers to traditional triaxial coordinate conventions instead.
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    </div>
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="velocity-enabled">
+                    <label class="form-check-label" for="velocity-enabled" title="Enable Velocity">Enabled</label>
+                    <br>
+                    <input type="checkbox" class="form-check-input" id="velocity-req-sprint">
+                    <label class="form-check-label" for="velocity-req-sprint" title="Velocity will activate only if you are sprinting">Require Sprint</label>
+                </div>
+                <div>
+                    <label for="velocity-chance-label" title="How often you'll take your modified knockback">Chance</label>
+                    <input type="text" id="velocity-chance-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="velocity-chance" style="width: 95%"></div>
+                    <br>
+                    <label for="velocity-x-label" title="Value your x-axis knockback should be multiplied by">X Multiplier</label>
+                    <input type="text" id="velocity-x-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="velocity-x" style="width: 95%"></div>
+                    <br>
+                    <label for="velocity-y-label" title="Value your y-axis knockback should be multiplied by">Y Multiplier</label>
+                    <input type="text" id="velocity-y-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="velocity-y" style="width: 95%"></div>
+                    <br>
+                    <label for="velocity-z-label" title="Value your z-axis knockback should be multiplied by">Z Multiplier</label>
+                    <input type="text" id="velocity-z-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="velocity-z" style="width: 95%"></div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="visuals" role="tabpanel" aria-labelledby="visuals-tab">
+                <h4 title="Visual based modules">Visuals</h4>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="HUD-enabled">
+                    <label class="form-check-label" for="HUD-enabled" title="Displays client watermark, current time and array list">HUD</label>
+                    <br>
+                    <input type="checkbox" class="form-check-input" id="nametags-enabled">
+                    <label class="form-check-label" for="nametags-enabled" title="Modified player nametags (Darker, larger, see-through, sneaking indication, health indication, friend/enemy indication)">NameTags</label>
+                    <br>
+                    <input type="checkbox" class="form-check-input" id="brightness-enabled">
+                    <label class="form-check-label" for="brightness-enabled" title="Turns up gamma setting beyond the maximum threshold">Brightness</label>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="throwpot" role="tabpanel" aria-labelledby="throwpot-tab">
+                <h4 title="Switches to a randomly selected hotbar slot containing a health potion and throws it&#013;This is a single-use module">ThrowPot</h4>
+                <div>
+                    <label for="throwpot-throw-delay-label" title="Amount of time (in milliseconds) to wait before ThrowPot activates">Throw Delay</label>
+                    <input type="text" id="throwpot-throw-delay-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="throwpot-throw-delay" style="width: 95%"></div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="refill" role="tabpanel" aria-labelledby="refill-tab">
+                <h4 title="Opens inventory, randomly selects health potions to fill to empty hotbar slots, then closes inventory&#013;This is a single-use module">Refill</h4>
+                <div>
+                    <div>
+                        <label for="refill-fill-delay-label" title="Amount of time (in milliseconds) to wait before filling an empty hotbar slot">Fill Delay</label>
+                        <input type="text" id="refill-fill-delay-label" readonly
+                               style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                        <div id="refill-fill-delay" style="width: 95%"></div>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="refill-exit-delay-label" title="Amount of time (in milliseconds) to wait before closing inventory">Exit Delay</label>
+                        <input type="text" id="refill-exit-delay-label" readonly
+                               style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                        <div id="refill-exit-delay" style="width: 95%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="fakelag" role="tabpanel" aria-labelledby="fakelag-tab">
+                <h4 title="Delays packets sent to the server, simulating lag. Can be used to mask blatant settings as some anti-cheats will not flag you if your ping is too high.">Fake Lag</h4>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="fakelag-enabled">
+                    <label class="form-check-label" for="fakelag-enabled" title="Enable Fake Lag">Enabled</label>
+                </div>
+                <div>
+                    <label for="fakelag-packet-delay-label" title="Amount of time (in milliseconds) to wait before Fake Lag allows packet to be sent">Packet Delay</label>
+                    <input type="text" id="fakelag-packet-delay-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="fakelag-packet-delay" style="width: 95%"></div>
+                </div>
+                <br>
+                <div>
+                    <label for="fakelag-dist-label" title="Maximum distance player needs to be from you to halt Fake Lag">Distance</label>
+                    <input type="text" id="fakelag-dist-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="fakelag-dist" style="width: 95%"></div>
+                </div>
+                <br>
+                <div>
+                    <label for="fakelag-fov-label" title="Maximum FOV (Field of Vision) player needs to be within your crosshair to halt Fake Lag">FOV</label>
+                    <input type="text" id="fakelag-fov-label" readonly
+                           style="border:0; color:#8dc63f; font-weight: 600; background-color:rgba(0, 0, 0, 0);">
+                    <div id="fakelag-fov" style="width: 95%"></div>
+                </div>
+                <br>
+            </div>
+            <div class="tab-pane fade" id="players" role="tabpanel" aria-labelledby="players-tab">
+                <h4 title="Label ingame players as friend/enemy">Player List</h4>
+                <div>
+                    <label for="friends" title="Aimbot and WTap will not activate on these players. NameTags will set these players' names to a green color&#013;Usernames are case insensitive and separated with commas">Friends</label>
+                    <br>
+                    <textarea id="friends"></textarea>
+                </div>
+                <br>
+                <div>
+                    <label for="enemies" title="NameTags will set these players' names to a red color&#013;Usernames are case insensitive and separated with commas">Enemies</label>
+                    <br>
+                    <textarea id="enemies"></textarea>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="keybinds" role="tabpanel" aria-labelledby="keybinds-tab">
+                <h4 title="Toggle modules upon pressing the specified key">Key Binds</h4>
+                <div>
+                    <div style="margin-bottom: 12px">
+                        <label for="HUD-bind" title="HUD key bind">HUD</label><br>
+                        <select name="HUD-bind" id="HUD-bind">
+                            <option value="1">ESCAPE</option>
+                            <option value="2">1</option>
+                            <option value="3">2</option>
+                            <option value="4">3</option>
+                            <option value="5">4</option>
+                            <option value="6">5</option>
+                            <option value="7">6</option>
+                            <option value="8">7</option>
+                            <option value="9">8</option>
+                            <option value="10">9</option>
+                            <option value="11">0</option>
+                            <option value="12">MINUS</option>
+                            <option value="13">EQUALS</option>
+                            <option value="14">BACK</option>
+                            <option value="15">TAB</option>
+                            <option value="16">Q</option>
+                            <option value="17">W</option>
+                            <option value="18">E</option>
+                            <option value="19">R</option>
+                            <option value="20">T</option>
+                            <option value="21">Y</option>
+                            <option value="22">U</option>
+                            <option value="23">I</option>
+                            <option value="24">O</option>
+                            <option value="25">P</option>
+                            <option value="26">LBRACKET</option>
+                            <option value="27">RBRACKET</option>
+                            <option value="28">RETURN</option>
+                            <option value="29">LCONTROL</option>
+                            <option value="30">A</option>
+                            <option value="31">S</option>
+                            <option value="32">D</option>
+                            <option value="33">F</option>
+                            <option value="34">G</option>
+                            <option value="35">H</option>
+                            <option value="36">J</option>
+                            <option value="37">K</option>
+                            <option value="38">L</option>
+                            <option value="39">SEMICOLON</option>
+                            <option value="40">APOSTROPHE</option>
+                            <option value="41">GRAVE</option>
+                            <option value="42">LSHIFT</option>
+                            <option value="43">BACKSLASH</option>
+                            <option value="44">Z</option>
+                            <option value="45">X</option>
+                            <option value="46">C</option>
+                            <option value="47">V</option>
+                            <option value="48">B</option>
+                            <option value="49">N</option>
+                            <option value="50">M</option>
+                            <option value="51">COMMA</option>
+                            <option value="52">PERIOD</option>
+                            <option value="53">SLASH</option>
+                            <option value="54">RSHIFT</option>
+                            <option value="55">MULTIPLY</option>
+                            <option value="56">LMENU</option>
+                            <option value="57">SPACE</option>
+                            <option value="58">CAPITAL</option>
+                            <option value="59">F1</option>
+                            <option value="60">F2</option>
+                            <option value="61">F3</option>
+                            <option value="62">F4</option>
+                            <option value="63">F5</option>
+                            <option value="64">F6</option>
+                            <option value="65">F7</option>
+                            <option value="66">F8</option>
+                            <option value="67">F9</option>
+                            <option value="68">F10</option>
+                            <option value="69">NUMLOCK</option>
+                            <option value="70">SCROLL</option>
+                            <option value="71">NUMPAD7</option>
+                            <option value="72">NUMPAD8</option>
+                            <option value="73">NUMPAD9</option>
+                            <option value="74">SUBTRACT</option>
+                            <option value="75">NUMPAD4</option>
+                            <option value="76">NUMPAD5</option>
+                            <option value="77">NUMPAD6</option>
+                            <option value="78">ADD</option>
+                            <option value="79">NUMPAD1</option>
+                            <option value="80">NUMPAD2</option>
+                            <option value="81">NUMPAD3</option>
+                            <option value="82">NUMPAD0</option>
+                            <option value="83">DECIMAL</option>
+                            <option value="87">F11</option>
+                            <option value="88">F12</option>
+                            <option value="100">F13</option>
+                            <option value="101">F14</option>
+                            <option value="102">F15</option>
+                            <option value="103">F16</option>
+                            <option value="104">F17</option>
+                            <option value="105">F18</option>
+                            <option value="112">KANA</option>
+                            <option value="113">F19</option>
+                            <option value="121">CONVERT</option>
+                            <option value="123">NOCONVERT</option>
+                            <option value="125">YEN</option>
+                            <option value="141">NUMPADEQUALS</option>
+                            <option value="144">CIRCUMFLEX</option>
+                            <option value="145">AT</option>
+                            <option value="146">COLON</option>
+                            <option value="147">UNDERLINE</option>
+                            <option value="148">KANJI</option>
+                            <option value="149">STOP</option>
+                            <option value="150">AX</option>
+                            <option value="151">UNLABELED</option>
+                            <option value="156">NUMPADENTER</option>
+                            <option value="157">RCONTROL</option>
+                            <option value="167">SECTION</option>
+                            <option value="179">NUMPADCOMMA</option>
+                            <option value="181">DIVIDE</option>
+                            <option value="183">SYSRQ</option>
+                            <option value="184">RMENU</option>
+                            <option value="196">RFUNCTION</option>
+                            <option value="197">PAUSE</option>
+                            <option value="199">HOME</option>
+                            <option value="200">UP</option>
+                            <option value="201">PRIOR</option>
+                            <option value="203">LEFT</option>
+                            <option value="205">RIGHT</option>
+                            <option value="207">END</option>
+                            <option value="208">DOWN</option>
+                            <option value="209">NEXT</option>
+                            <option value="210">INSERT</option>
+                            <option value="211">DELETE</option>
+                            <option value="218">CLEAR</option>
+                            <option value="219">LMETA</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 12px">
+                        <label for="autoclicker-bind" title="AutoClicker key bind">AutoClicker</label><br>
+                        <select name="autoclicker-bind" id="autoclicker-bind">
+                            <option value="1">ESCAPE</option>
+                            <option value="2">1</option>
+                            <option value="3">2</option>
+                            <option value="4">3</option>
+                            <option value="5">4</option>
+                            <option value="6">5</option>
+                            <option value="7">6</option>
+                            <option value="8">7</option>
+                            <option value="9">8</option>
+                            <option value="10">9</option>
+                            <option value="11">0</option>
+                            <option value="12">MINUS</option>
+                            <option value="13">EQUALS</option>
+                            <option value="14">BACK</option>
+                            <option value="15">TAB</option>
+                            <option value="16">Q</option>
+                            <option value="17">W</option>
+                            <option value="18">E</option>
+                            <option value="19">R</option>
+                            <option value="20">T</option>
+                            <option value="21">Y</option>
+                            <option value="22">U</option>
+                            <option value="23">I</option>
+                            <option value="24">O</option>
+                            <option value="25">P</option>
+                            <option value="26">LBRACKET</option>
+                            <option value="27">RBRACKET</option>
+                            <option value="28">RETURN</option>
+                            <option value="29">LCONTROL</option>
+                            <option value="30">A</option>
+                            <option value="31">S</option>
+                            <option value="32">D</option>
+                            <option value="33">F</option>
+                            <option value="34">G</option>
+                            <option value="35">H</option>
+                            <option value="36">J</option>
+                            <option value="37">K</option>
+                            <option value="38">L</option>
+                            <option value="39">SEMICOLON</option>
+                            <option value="40">APOSTROPHE</option>
+                            <option value="41">GRAVE</option>
+                            <option value="42">LSHIFT</option>
+                            <option value="43">BACKSLASH</option>
+                            <option value="44">Z</option>
+                            <option value="45">X</option>
+                            <option value="46">C</option>
+                            <option value="47">V</option>
+                            <option value="48">B</option>
+                            <option value="49">N</option>
+                            <option value="50">M</option>
+                            <option value="51">COMMA</option>
+                            <option value="52">PERIOD</option>
+                            <option value="53">SLASH</option>
+                            <option value="54">RSHIFT</option>
+                            <option value="55">MULTIPLY</option>
+                            <option value="56">LMENU</option>
+                            <option value="57">SPACE</option>
+                            <option value="58">CAPITAL</option>
+                            <option value="59">F1</option>
+                            <option value="60">F2</option>
+                            <option value="61">F3</option>
+                            <option value="62">F4</option>
+                            <option value="63">F5</option>
+                            <option value="64">F6</option>
+                            <option value="65">F7</option>
+                            <option value="66">F8</option>
+                            <option value="67">F9</option>
+                            <option value="68">F10</option>
+                            <option value="69">NUMLOCK</option>
+                            <option value="70">SCROLL</option>
+                            <option value="71">NUMPAD7</option>
+                            <option value="72">NUMPAD8</option>
+                            <option value="73">NUMPAD9</option>
+                            <option value="74">SUBTRACT</option>
+                            <option value="75">NUMPAD4</option>
+                            <option value="76">NUMPAD5</option>
+                            <option value="77">NUMPAD6</option>
+                            <option value="78">ADD</option>
+                            <option value="79">NUMPAD1</option>
+                            <option value="80">NUMPAD2</option>
+                            <option value="81">NUMPAD3</option>
+                            <option value="82">NUMPAD0</option>
+                            <option value="83">DECIMAL</option>
+                            <option value="87">F11</option>
+                            <option value="88">F12</option>
+                            <option value="100">F13</option>
+                            <option value="101">F14</option>
+                            <option value="102">F15</option>
+                            <option value="103">F16</option>
+                            <option value="104">F17</option>
+                            <option value="105">F18</option>
+                            <option value="112">KANA</option>
+                            <option value="113">F19</option>
+                            <option value="121">CONVERT</option>
+                            <option value="123">NOCONVERT</option>
+                            <option value="125">YEN</option>
+                            <option value="141">NUMPADEQUALS</option>
+                            <option value="144">CIRCUMFLEX</option>
+                            <option value="145">AT</option>
+                            <option value="146">COLON</option>
+                            <option value="147">UNDERLINE</option>
+                            <option value="148">KANJI</option>
+                            <option value="149">STOP</option>
+                            <option value="150">AX</option>
+                            <option value="151">UNLABELED</option>
+                            <option value="156">NUMPADENTER</option>
+                            <option value="157">RCONTROL</option>
+                            <option value="167">SECTION</option>
+                            <option value="179">NUMPADCOMMA</option>
+                            <option value="181">DIVIDE</option>
+                            <option value="183">SYSRQ</option>
+                            <option value="184">RMENU</option>
+                            <option value="196">RFUNCTION</option>
+                            <option value="197">PAUSE</option>
+                            <option value="199">HOME</option>
+                            <option value="200">UP</option>
+                            <option value="201">PRIOR</option>
+                            <option value="203">LEFT</option>
+                            <option value="205">RIGHT</option>
+                            <option value="207">END</option>
+                            <option value="208">DOWN</option>
+                            <option value="209">NEXT</option>
+                            <option value="210">INSERT</option>
+                            <option value="211">DELETE</option>
+                            <option value="218">CLEAR</option>
+                            <option value="219">LMETA</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 12px">
+                        <label for="aimbot-bind" title="Aimbot key bind">Aimbot</label><br>
+                        <select name="aimbot-bind" id="aimbot-bind">
+                            <option value="1">ESCAPE</option>
+                            <option value="2">1</option>
+                            <option value="3">2</option>
+                            <option value="4">3</option>
+                            <option value="5">4</option>
+                            <option value="6">5</option>
+                            <option value="7">6</option>
+                            <option value="8">7</option>
+                            <option value="9">8</option>
+                            <option value="10">9</option>
+                            <option value="11">0</option>
+                            <option value="12">MINUS</option>
+                            <option value="13">EQUALS</option>
+                            <option value="14">BACK</option>
+                            <option value="15">TAB</option>
+                            <option value="16">Q</option>
+                            <option value="17">W</option>
+                            <option value="18">E</option>
+                            <option value="19">R</option>
+                            <option value="20">T</option>
+                            <option value="21">Y</option>
+                            <option value="22">U</option>
+                            <option value="23">I</option>
+                            <option value="24">O</option>
+                            <option value="25">P</option>
+                            <option value="26">LBRACKET</option>
+                            <option value="27">RBRACKET</option>
+                            <option value="28">RETURN</option>
+                            <option value="29">LCONTROL</option>
+                            <option value="30">A</option>
+                            <option value="31">S</option>
+                            <option value="32">D</option>
+                            <option value="33">F</option>
+                            <option value="34">G</option>
+                            <option value="35">H</option>
+                            <option value="36">J</option>
+                            <option value="37">K</option>
+                            <option value="38">L</option>
+                            <option value="39">SEMICOLON</option>
+                            <option value="40">APOSTROPHE</option>
+                            <option value="41">GRAVE</option>
+                            <option value="42">LSHIFT</option>
+                            <option value="43">BACKSLASH</option>
+                            <option value="44">Z</option>
+                            <option value="45">X</option>
+                            <option value="46">C</option>
+                            <option value="47">V</option>
+                            <option value="48">B</option>
+                            <option value="49">N</option>
+                            <option value="50">M</option>
+                            <option value="51">COMMA</option>
+                            <option value="52">PERIOD</option>
+                            <option value="53">SLASH</option>
+                            <option value="54">RSHIFT</option>
+                            <option value="55">MULTIPLY</option>
+                            <option value="56">LMENU</option>
+                            <option value="57">SPACE</option>
+                            <option value="58">CAPITAL</option>
+                            <option value="59">F1</option>
+                            <option value="60">F2</option>
+                            <option value="61">F3</option>
+                            <option value="62">F4</option>
+                            <option value="63">F5</option>
+                            <option value="64">F6</option>
+                            <option value="65">F7</option>
+                            <option value="66">F8</option>
+                            <option value="67">F9</option>
+                            <option value="68">F10</option>
+                            <option value="69">NUMLOCK</option>
+                            <option value="70">SCROLL</option>
+                            <option value="71">NUMPAD7</option>
+                            <option value="72">NUMPAD8</option>
+                            <option value="73">NUMPAD9</option>
+                            <option value="74">SUBTRACT</option>
+                            <option value="75">NUMPAD4</option>
+                            <option value="76">NUMPAD5</option>
+                            <option value="77">NUMPAD6</option>
+                            <option value="78">ADD</option>
+                            <option value="79">NUMPAD1</option>
+                            <option value="80">NUMPAD2</option>
+                            <option value="81">NUMPAD3</option>
+                            <option value="82">NUMPAD0</option>
+                            <option value="83">DECIMAL</option>
+                            <option value="87">F11</option>
+                            <option value="88">F12</option>
+                            <option value="100">F13</option>
+                            <option value="101">F14</option>
+                            <option value="102">F15</option>
+                            <option value="103">F16</option>
+                            <option value="104">F17</option>
+                            <option value="105">F18</option>
+                            <option value="112">KANA</option>
+                            <option value="113">F19</option>
+                            <option value="121">CONVERT</option>
+                            <option value="123">NOCONVERT</option>
+                            <option value="125">YEN</option>
+                            <option value="141">NUMPADEQUALS</option>
+                            <option value="144">CIRCUMFLEX</option>
+                            <option value="145">AT</option>
+                            <option value="146">COLON</option>
+                            <option value="147">UNDERLINE</option>
+                            <option value="148">KANJI</option>
+                            <option value="149">STOP</option>
+                            <option value="150">AX</option>
+                            <option value="151">UNLABELED</option>
+                            <option value="156">NUMPADENTER</option>
+                            <option value="157">RCONTROL</option>
+                            <option value="167">SECTION</option>
+                            <option value="179">NUMPADCOMMA</option>
+                            <option value="181">DIVIDE</option>
+                            <option value="183">SYSRQ</option>
+                            <option value="184">RMENU</option>
+                            <option value="196">RFUNCTION</option>
+                            <option value="197">PAUSE</option>
+                            <option value="199">HOME</option>
+                            <option value="200">UP</option>
+                            <option value="201">PRIOR</option>
+                            <option value="203">LEFT</option>
+                            <option value="205">RIGHT</option>
+                            <option value="207">END</option>
+                            <option value="208">DOWN</option>
+                            <option value="209">NEXT</option>
+                            <option value="210">INSERT</option>
+                            <option value="211">DELETE</option>
+                            <option value="218">CLEAR</option>
+                            <option value="219">LMETA</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 12px">
+                        <label for="wtap-bind" title="WTap key bind">WTap</label><br>
+                        <select name="wtap-bind" id="wtap-bind">
+                            <option value="1">ESCAPE</option>
+                            <option value="2">1</option>
+                            <option value="3">2</option>
+                            <option value="4">3</option>
+                            <option value="5">4</option>
+                            <option value="6">5</option>
+                            <option value="7">6</option>
+                            <option value="8">7</option>
+                            <option value="9">8</option>
+                            <option value="10">9</option>
+                            <option value="11">0</option>
+                            <option value="12">MINUS</option>
+                            <option value="13">EQUALS</option>
+                            <option value="14">BACK</option>
+                            <option value="15">TAB</option>
+                            <option value="16">Q</option>
+                            <option value="17">W</option>
+                            <option value="18">E</option>
+                            <option value="19">R</option>
+                            <option value="20">T</option>
+                            <option value="21">Y</option>
+                            <option value="22">U</option>
+                            <option value="23">I</option>
+                            <option value="24">O</option>
+                            <option value="25">P</option>
+                            <option value="26">LBRACKET</option>
+                            <option value="27">RBRACKET</option>
+                            <option value="28">RETURN</option>
+                            <option value="29">LCONTROL</option>
+                            <option value="30">A</option>
+                            <option value="31">S</option>
+                            <option value="32">D</option>
+                            <option value="33">F</option>
+                            <option value="34">G</option>
+                            <option value="35">H</option>
+                            <option value="36">J</option>
+                            <option value="37">K</option>
+                            <option value="38">L</option>
+                            <option value="39">SEMICOLON</option>
+                            <option value="40">APOSTROPHE</option>
+                            <option value="41">GRAVE</option>
+                            <option value="42">LSHIFT</option>
+                            <option value="43">BACKSLASH</option>
+                            <option value="44">Z</option>
+                            <option value="45">X</option>
+                            <option value="46">C</option>
+                            <option value="47">V</option>
+                            <option value="48">B</option>
+                            <option value="49">N</option>
+                            <option value="50">M</option>
+                            <option value="51">COMMA</option>
+                            <option value="52">PERIOD</option>
+                            <option value="53">SLASH</option>
+                            <option value="54">RSHIFT</option>
+                            <option value="55">MULTIPLY</option>
+                            <option value="56">LMENU</option>
+                            <option value="57">SPACE</option>
+                            <option value="58">CAPITAL</option>
+                            <option value="59">F1</option>
+                            <option value="60">F2</option>
+                            <option value="61">F3</option>
+                            <option value="62">F4</option>
+                            <option value="63">F5</option>
+                            <option value="64">F6</option>
+                            <option value="65">F7</option>
+                            <option value="66">F8</option>
+                            <option value="67">F9</option>
+                            <option value="68">F10</option>
+                            <option value="69">NUMLOCK</option>
+                            <option value="70">SCROLL</option>
+                            <option value="71">NUMPAD7</option>
+                            <option value="72">NUMPAD8</option>
+                            <option value="73">NUMPAD9</option>
+                            <option value="74">SUBTRACT</option>
+                            <option value="75">NUMPAD4</option>
+                            <option value="76">NUMPAD5</option>
+                            <option value="77">NUMPAD6</option>
+                            <option value="78">ADD</option>
+                            <option value="79">NUMPAD1</option>
+                            <option value="80">NUMPAD2</option>
+                            <option value="81">NUMPAD3</option>
+                            <option value="82">NUMPAD0</option>
+                            <option value="83">DECIMAL</option>
+                            <option value="87">F11</option>
+                            <option value="88">F12</option>
+                            <option value="100">F13</option>
+                            <option value="101">F14</option>
+                            <option value="102">F15</option>
+                            <option value="103">F16</option>
+                            <option value="104">F17</option>
+                            <option value="105">F18</option>
+                            <option value="112">KANA</option>
+                            <option value="113">F19</option>
+                            <option value="121">CONVERT</option>
+                            <option value="123">NOCONVERT</option>
+                            <option value="125">YEN</option>
+                            <option value="141">NUMPADEQUALS</option>
+                            <option value="144">CIRCUMFLEX</option>
+                            <option value="145">AT</option>
+                            <option value="146">COLON</option>
+                            <option value="147">UNDERLINE</option>
+                            <option value="148">KANJI</option>
+                            <option value="149">STOP</option>
+                            <option value="150">AX</option>
+                            <option value="151">UNLABELED</option>
+                            <option value="156">NUMPADENTER</option>
+                            <option value="157">RCONTROL</option>
+                            <option value="167">SECTION</option>
+                            <option value="179">NUMPADCOMMA</option>
+                            <option value="181">DIVIDE</option>
+                            <option value="183">SYSRQ</option>
+                            <option value="184">RMENU</option>
+                            <option value="196">RFUNCTION</option>
+                            <option value="197">PAUSE</option>
+                            <option value="199">HOME</option>
+                            <option value="200">UP</option>
+                            <option value="201">PRIOR</option>
+                            <option value="203">LEFT</option>
+                            <option value="205">RIGHT</option>
+                            <option value="207">END</option>
+                            <option value="208">DOWN</option>
+                            <option value="209">NEXT</option>
+                            <option value="210">INSERT</option>
+                            <option value="211">DELETE</option>
+                            <option value="218">CLEAR</option>
+                            <option value="219">LMETA</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 12px">
+                        <label for="reach-bind" title="Reach key bind">Reach</label><br>
+                        <select name="reach-bind" id="reach-bind">
+                            <option value="1">ESCAPE</option>
+                            <option value="2">1</option>
+                            <option value="3">2</option>
+                            <option value="4">3</option>
+                            <option value="5">4</option>
+                            <option value="6">5</option>
+                            <option value="7">6</option>
+                            <option value="8">7</option>
+                            <option value="9">8</option>
+                            <option value="10">9</option>
+                            <option value="11">0</option>
+                            <option value="12">MINUS</option>
+                            <option value="13">EQUALS</option>
+                            <option value="14">BACK</option>
+                            <option value="15">TAB</option>
+                            <option value="16">Q</option>
+                            <option value="17">W</option>
+                            <option value="18">E</option>
+                            <option value="19">R</option>
+                            <option value="20">T</option>
+                            <option value="21">Y</option>
+                            <option value="22">U</option>
+                            <option value="23">I</option>
+                            <option value="24">O</option>
+                            <option value="25">P</option>
+                            <option value="26">LBRACKET</option>
+                            <option value="27">RBRACKET</option>
+                            <option value="28">RETURN</option>
+                            <option value="29">LCONTROL</option>
+                            <option value="30">A</option>
+                            <option value="31">S</option>
+                            <option value="32">D</option>
+                            <option value="33">F</option>
+                            <option value="34">G</option>
+                            <option value="35">H</option>
+                            <option value="36">J</option>
+                            <option value="37">K</option>
+                            <option value="38">L</option>
+                            <option value="39">SEMICOLON</option>
+                            <option value="40">APOSTROPHE</option>
+                            <option value="41">GRAVE</option>
+                            <option value="42">LSHIFT</option>
+                            <option value="43">BACKSLASH</option>
+                            <option value="44">Z</option>
+                            <option value="45">X</option>
+                            <option value="46">C</option>
+                            <option value="47">V</option>
+                            <option value="48">B</option>
+                            <option value="49">N</option>
+                            <option value="50">M</option>
+                            <option value="51">COMMA</option>
+                            <option value="52">PERIOD</option>
+                            <option value="53">SLASH</option>
+                            <option value="54">RSHIFT</option>
+                            <option value="55">MULTIPLY</option>
+                            <option value="56">LMENU</option>
+                            <option value="57">SPACE</option>
+                            <option value="58">CAPITAL</option>
+                            <option value="59">F1</option>
+                            <option value="60">F2</option>
+                            <option value="61">F3</option>
+                            <option value="62">F4</option>
+                            <option value="63">F5</option>
+                            <option value="64">F6</option>
+                            <option value="65">F7</option>
+                            <option value="66">F8</option>
+                            <option value="67">F9</option>
+                            <option value="68">F10</option>
+                            <option value="69">NUMLOCK</option>
+                            <option value="70">SCROLL</option>
+                            <option value="71">NUMPAD7</option>
+                            <option value="72">NUMPAD8</option>
+                            <option value="73">NUMPAD9</option>
+                            <option value="74">SUBTRACT</option>
+                            <option value="75">NUMPAD4</option>
+                            <option value="76">NUMPAD5</option>
+                            <option value="77">NUMPAD6</option>
+                            <option value="78">ADD</option>
+                            <option value="79">NUMPAD1</option>
+                            <option value="80">NUMPAD2</option>
+                            <option value="81">NUMPAD3</option>
+                            <option value="82">NUMPAD0</option>
+                            <option value="83">DECIMAL</option>
+                            <option value="87">F11</option>
+                            <option value="88">F12</option>
+                            <option value="100">F13</option>
+                            <option value="101">F14</option>
+                            <option value="102">F15</option>
+                            <option value="103">F16</option>
+                            <option value="104">F17</option>
+                            <option value="105">F18</option>
+                            <option value="112">KANA</option>
+                            <option value="113">F19</option>
+                            <option value="121">CONVERT</option>
+                            <option value="123">NOCONVERT</option>
+                            <option value="125">YEN</option>
+                            <option value="141">NUMPADEQUALS</option>
+                            <option value="144">CIRCUMFLEX</option>
+                            <option value="145">AT</option>
+                            <option value="146">COLON</option>
+                            <option value="147">UNDERLINE</option>
+                            <option value="148">KANJI</option>
+                            <option value="149">STOP</option>
+                            <option value="150">AX</option>
+                            <option value="151">UNLABELED</option>
+                            <option value="156">NUMPADENTER</option>
+                            <option value="157">RCONTROL</option>
+                            <option value="167">SECTION</option>
+                            <option value="179">NUMPADCOMMA</option>
+                            <option value="181">DIVIDE</option>
+                            <option value="183">SYSRQ</option>
+                            <option value="184">RMENU</option>
+                            <option value="196">RFUNCTION</option>
+                            <option value="197">PAUSE</option>
+                            <option value="199">HOME</option>
+                            <option value="200">UP</option>
+                            <option value="201">PRIOR</option>
+                            <option value="203">LEFT</option>
+                            <option value="205">RIGHT</option>
+                            <option value="207">END</option>
+                            <option value="208">DOWN</option>
+                            <option value="209">NEXT</option>
+                            <option value="210">INSERT</option>
+                            <option value="211">DELETE</option>
+                            <option value="218">CLEAR</option>
+                            <option value="219">LMETA</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 12px">
+                        <label for="hitboxes-bind" title="HitBoxes key bind">HitBoxes</label><br>
+                        <select name="hitboxes-bind" id="hitboxes-bind">
+                            <option value="1">ESCAPE</option>
+                            <option value="2">1</option>
+                            <option value="3">2</option>
+                            <option value="4">3</option>
+                            <option value="5">4</option>
+                            <option value="6">5</option>
+                            <option value="7">6</option>
+                            <option value="8">7</option>
+                            <option value="9">8</option>
+                            <option value="10">9</option>
+                            <option value="11">0</option>
+                            <option value="12">MINUS</option>
+                            <option value="13">EQUALS</option>
+                            <option value="14">BACK</option>
+                            <option value="15">TAB</option>
+                            <option value="16">Q</option>
+                            <option value="17">W</option>
+                            <option value="18">E</option>
+                            <option value="19">R</option>
+                            <option value="20">T</option>
+                            <option value="21">Y</option>
+                            <option value="22">U</option>
+                            <option value="23">I</option>
+                            <option value="24">O</option>
+                            <option value="25">P</option>
+                            <option value="26">LBRACKET</option>
+                            <option value="27">RBRACKET</option>
+                            <option value="28">RETURN</option>
+                            <option value="29">LCONTROL</option>
+                            <option value="30">A</option>
+                            <option value="31">S</option>
+                            <option value="32">D</option>
+                            <option value="33">F</option>
+                            <option value="34">G</option>
+                            <option value="35">H</option>
+                            <option value="36">J</option>
+                            <option value="37">K</option>
+                            <option value="38">L</option>
+                            <option value="39">SEMICOLON</option>
+                            <option value="40">APOSTROPHE</option>
+                            <option value="41">GRAVE</option>
+                            <option value="42">LSHIFT</option>
+                            <option value="43">BACKSLASH</option>
+                            <option value="44">Z</option>
+                            <option value="45">X</option>
+                            <option value="46">C</option>
+                            <option value="47">V</option>
+                            <option value="48">B</option>
+                            <option value="49">N</option>
+                            <option value="50">M</option>
+                            <option value="51">COMMA</option>
+                            <option value="52">PERIOD</option>
+                            <option value="53">SLASH</option>
+                            <option value="54">RSHIFT</option>
+                            <option value="55">MULTIPLY</option>
+                            <option value="56">LMENU</option>
+                            <option value="57">SPACE</option>
+                            <option value="58">CAPITAL</option>
+                            <option value="59">F1</option>
+                            <option value="60">F2</option>
+                            <option value="61">F3</option>
+                            <option value="62">F4</option>
+                            <option value="63">F5</option>
+                            <option value="64">F6</option>
+                            <option value="65">F7</option>
+                            <option value="66">F8</option>
+                            <option value="67">F9</option>
+                            <option value="68">F10</option>
+                            <option value="69">NUMLOCK</option>
+                            <option value="70">SCROLL</option>
+                            <option value="71">NUMPAD7</option>
+                            <option value="72">NUMPAD8</option>
+                            <option value="73">NUMPAD9</option>
+                            <option value="74">SUBTRACT</option>
+                            <option value="75">NUMPAD4</option>
+                            <option value="76">NUMPAD5</option>
+                            <option value="77">NUMPAD6</option>
+                            <option value="78">ADD</option>
+                            <option value="79">NUMPAD1</option>
+                            <option value="80">NUMPAD2</option>
+                            <option value="81">NUMPAD3</option>
+                            <option value="82">NUMPAD0</option>
+                            <option value="83">DECIMAL</option>
+                            <option value="87">F11</option>
+                            <option value="88">F12</option>
+                            <option value="100">F13</option>
+                            <option value="101">F14</option>
+                            <option value="102">F15</option>
+                            <option value="103">F16</option>
+                            <option value="104">F17</option>
+                            <option value="105">F18</option>
+                            <option value="112">KANA</option>
+                            <option value="113">F19</option>
+                            <option value="121">CONVERT</option>
+                            <option value="123">NOCONVERT</option>
+                            <option value="125">YEN</option>
+                            <option value="141">NUMPADEQUALS</option>
+                            <option value="144">CIRCUMFLEX</option>
+                            <option value="145">AT</option>
+                            <option value="146">COLON</option>
+                            <option value="147">UNDERLINE</option>
+                            <option value="148">KANJI</option>
+                            <option value="149">STOP</option>
+                            <option value="150">AX</option>
+                            <option value="151">UNLABELED</option>
+                            <option value="156">NUMPADENTER</option>
+                            <option value="157">RCONTROL</option>
+                            <option value="167">SECTION</option>
+                            <option value="179">NUMPADCOMMA</option>
+                            <option value="181">DIVIDE</option>
+                            <option value="183">SYSRQ</option>
+                            <option value="184">RMENU</option>
+                            <option value="196">RFUNCTION</option>
+                            <option value="197">PAUSE</option>
+                            <option value="199">HOME</option>
+                            <option value="200">UP</option>
+                            <option value="201">PRIOR</option>
+                            <option value="203">LEFT</option>
+                            <option value="205">RIGHT</option>
+                            <option value="207">END</option>
+                            <option value="208">DOWN</option>
+                            <option value="209">NEXT</option>
+                            <option value="210">INSERT</option>
+                            <option value="211">DELETE</option>
+                            <option value="218">CLEAR</option>
+                            <option value="219">LMETA</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 12px">
+                        <label for="velocity-bind" title="Velocity key bind">Velocity</label><br>
+                        <select name="velocity-bind" id="velocity-bind">
+                            <option value="1">ESCAPE</option>
+                            <option value="2">1</option>
+                            <option value="3">2</option>
+                            <option value="4">3</option>
+                            <option value="5">4</option>
+                            <option value="6">5</option>
+                            <option value="7">6</option>
+                            <option value="8">7</option>
+                            <option value="9">8</option>
+                            <option value="10">9</option>
+                            <option value="11">0</option>
+                            <option value="12">MINUS</option>
+                            <option value="13">EQUALS</option>
+                            <option value="14">BACK</option>
+                            <option value="15">TAB</option>
+                            <option value="16">Q</option>
+                            <option value="17">W</option>
+                            <option value="18">E</option>
+                            <option value="19">R</option>
+                            <option value="20">T</option>
+                            <option value="21">Y</option>
+                            <option value="22">U</option>
+                            <option value="23">I</option>
+                            <option value="24">O</option>
+                            <option value="25">P</option>
+                            <option value="26">LBRACKET</option>
+                            <option value="27">RBRACKET</option>
+                            <option value="28">RETURN</option>
+                            <option value="29">LCONTROL</option>
+                            <option value="30">A</option>
+                            <option value="31">S</option>
+                            <option value="32">D</option>
+                            <option value="33">F</option>
+                            <option value="34">G</option>
+                            <option value="35">H</option>
+                            <option value="36">J</option>
+                            <option value="37">K</option>
+                            <option value="38">L</option>
+                            <option value="39">SEMICOLON</option>
+                            <option value="40">APOSTROPHE</option>
+                            <option value="41">GRAVE</option>
+                            <option value="42">LSHIFT</option>
+                            <option value="43">BACKSLASH</option>
+                            <option value="44">Z</option>
+                            <option value="45">X</option>
+                            <option value="46">C</option>
+                            <option value="47">V</option>
+                            <option value="48">B</option>
+                            <option value="49">N</option>
+                            <option value="50">M</option>
+                            <option value="51">COMMA</option>
+                            <option value="52">PERIOD</option>
+                            <option value="53">SLASH</option>
+                            <option value="54">RSHIFT</option>
+                            <option value="55">MULTIPLY</option>
+                            <option value="56">LMENU</option>
+                            <option value="57">SPACE</option>
+                            <option value="58">CAPITAL</option>
+                            <option value="59">F1</option>
+                            <option value="60">F2</option>
+                            <option value="61">F3</option>
+                            <option value="62">F4</option>
+                            <option value="63">F5</option>
+                            <option value="64">F6</option>
+                            <option value="65">F7</option>
+                            <option value="66">F8</option>
+                            <option value="67">F9</option>
+                            <option value="68">F10</option>
+                            <option value="69">NUMLOCK</option>
+                            <option value="70">SCROLL</option>
+                            <option value="71">NUMPAD7</option>
+                            <option value="72">NUMPAD8</option>
+                            <option value="73">NUMPAD9</option>
+                            <option value="74">SUBTRACT</option>
+                            <option value="75">NUMPAD4</option>
+                            <option value="76">NUMPAD5</option>
+                            <option value="77">NUMPAD6</option>
+                            <option value="78">ADD</option>
+                            <option value="79">NUMPAD1</option>
+                            <option value="80">NUMPAD2</option>
+                            <option value="81">NUMPAD3</option>
+                            <option value="82">NUMPAD0</option>
+                            <option value="83">DECIMAL</option>
+                            <option value="87">F11</option>
+                            <option value="88">F12</option>
+                            <option value="100">F13</option>
+                            <option value="101">F14</option>
+                            <option value="102">F15</option>
+                            <option value="103">F16</option>
+                            <option value="104">F17</option>
+                            <option value="105">F18</option>
+                            <option value="112">KANA</option>
+                            <option value="113">F19</option>
+                            <option value="121">CONVERT</option>
+                            <option value="123">NOCONVERT</option>
+                            <option value="125">YEN</option>
+                            <option value="141">NUMPADEQUALS</option>
+                            <option value="144">CIRCUMFLEX</option>
+                            <option value="145">AT</option>
+                            <option value="146">COLON</option>
+                            <option value="147">UNDERLINE</option>
+                            <option value="148">KANJI</option>
+                            <option value="149">STOP</option>
+                            <option value="150">AX</option>
+                            <option value="151">UNLABELED</option>
+                            <option value="156">NUMPADENTER</option>
+                            <option value="157">RCONTROL</option>
+                            <option value="167">SECTION</option>
+                            <option value="179">NUMPADCOMMA</option>
+                            <option value="181">DIVIDE</option>
+                            <option value="183">SYSRQ</option>
+                            <option value="184">RMENU</option>
+                            <option value="196">RFUNCTION</option>
+                            <option value="197">PAUSE</option>
+                            <option value="199">HOME</option>
+                            <option value="200">UP</option>
+                            <option value="201">PRIOR</option>
+                            <option value="203">LEFT</option>
+                            <option value="205">RIGHT</option>
+                            <option value="207">END</option>
+                            <option value="208">DOWN</option>
+                            <option value="209">NEXT</option>
+                            <option value="210">INSERT</option>
+                            <option value="211">DELETE</option>
+                            <option value="218">CLEAR</option>
+                            <option value="219">LMETA</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 12px">
+                        <label for="brightness-bind" title="Brightness key bind">Brightness</label><br>
+                        <select name="brightness-bind" id="brightness-bind">
+                            <option value="1">ESCAPE</option>
+                            <option value="2">1</option>
+                            <option value="3">2</option>
+                            <option value="4">3</option>
+                            <option value="5">4</option>
+                            <option value="6">5</option>
+                            <option value="7">6</option>
+                            <option value="8">7</option>
+                            <option value="9">8</option>
+                            <option value="10">9</option>
+                            <option value="11">0</option>
+                            <option value="12">MINUS</option>
+                            <option value="13">EQUALS</option>
+                            <option value="14">BACK</option>
+                            <option value="15">TAB</option>
+                            <option value="16">Q</option>
+                            <option value="17">W</option>
+                            <option value="18">E</option>
+                            <option value="19">R</option>
+                            <option value="20">T</option>
+                            <option value="21">Y</option>
+                            <option value="22">U</option>
+                            <option value="23">I</option>
+                            <option value="24">O</option>
+                            <option value="25">P</option>
+                            <option value="26">LBRACKET</option>
+                            <option value="27">RBRACKET</option>
+                            <option value="28">RETURN</option>
+                            <option value="29">LCONTROL</option>
+                            <option value="30">A</option>
+                            <option value="31">S</option>
+                            <option value="32">D</option>
+                            <option value="33">F</option>
+                            <option value="34">G</option>
+                            <option value="35">H</option>
+                            <option value="36">J</option>
+                            <option value="37">K</option>
+                            <option value="38">L</option>
+                            <option value="39">SEMICOLON</option>
+                            <option value="40">APOSTROPHE</option>
+                            <option value="41">GRAVE</option>
+                            <option value="42">LSHIFT</option>
+                            <option value="43">BACKSLASH</option>
+                            <option value="44">Z</option>
+                            <option value="45">X</option>
+                            <option value="46">C</option>
+                            <option value="47">V</option>
+                            <option value="48">B</option>
+                            <option value="49">N</option>
+                            <option value="50">M</option>
+                            <option value="51">COMMA</option>
+                            <option value="52">PERIOD</option>
+                            <option value="53">SLASH</option>
+                            <option value="54">RSHIFT</option>
+                            <option value="55">MULTIPLY</option>
+                            <option value="56">LMENU</option>
+                            <option value="57">SPACE</option>
+                            <option value="58">CAPITAL</option>
+                            <option value="59">F1</option>
+                            <option value="60">F2</option>
+                            <option value="61">F3</option>
+                            <option value="62">F4</option>
+                            <option value="63">F5</option>
+                            <option value="64">F6</option>
+                            <option value="65">F7</option>
+                            <option value="66">F8</option>
+                            <option value="67">F9</option>
+                            <option value="68">F10</option>
+                            <option value="69">NUMLOCK</option>
+                            <option value="70">SCROLL</option>
+                            <option value="71">NUMPAD7</option>
+                            <option value="72">NUMPAD8</option>
+                            <option value="73">NUMPAD9</option>
+                            <option value="74">SUBTRACT</option>
+                            <option value="75">NUMPAD4</option>
+                            <option value="76">NUMPAD5</option>
+                            <option value="77">NUMPAD6</option>
+                            <option value="78">ADD</option>
+                            <option value="79">NUMPAD1</option>
+                            <option value="80">NUMPAD2</option>
+                            <option value="81">NUMPAD3</option>
+                            <option value="82">NUMPAD0</option>
+                            <option value="83">DECIMAL</option>
+                            <option value="87">F11</option>
+                            <option value="88">F12</option>
+                            <option value="100">F13</option>
+                            <option value="101">F14</option>
+                            <option value="102">F15</option>
+                            <option value="103">F16</option>
+                            <option value="104">F17</option>
+                            <option value="105">F18</option>
+                            <option value="112">KANA</option>
+                            <option value="113">F19</option>
+                            <option value="121">CONVERT</option>
+                            <option value="123">NOCONVERT</option>
+                            <option value="125">YEN</option>
+                            <option value="141">NUMPADEQUALS</option>
+                            <option value="144">CIRCUMFLEX</option>
+                            <option value="145">AT</option>
+                            <option value="146">COLON</option>
+                            <option value="147">UNDERLINE</option>
+                            <option value="148">KANJI</option>
+                            <option value="149">STOP</option>
+                            <option value="150">AX</option>
+                            <option value="151">UNLABELED</option>
+                            <option value="156">NUMPADENTER</option>
+                            <option value="157">RCONTROL</option>
+                            <option value="167">SECTION</option>
+                            <option value="179">NUMPADCOMMA</option>
+                            <option value="181">DIVIDE</option>
+                            <option value="183">SYSRQ</option>
+                            <option value="184">RMENU</option>
+                            <option value="196">RFUNCTION</option>
+                            <option value="197">PAUSE</option>
+                            <option value="199">HOME</option>
+                            <option value="200">UP</option>
+                            <option value="201">PRIOR</option>
+                            <option value="203">LEFT</option>
+                            <option value="205">RIGHT</option>
+                            <option value="207">END</option>
+                            <option value="208">DOWN</option>
+                            <option value="209">NEXT</option>
+                            <option value="210">INSERT</option>
+                            <option value="211">DELETE</option>
+                            <option value="218">CLEAR</option>
+                            <option value="219">LMETA</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 12px">
+                        <label for="nametags-bind" title="NameTags key bind">NameTags</label><br>
+                        <select name="nametags-bind" id="nametags-bind">
+                            <option value="1">ESCAPE</option>
+                            <option value="2">1</option>
+                            <option value="3">2</option>
+                            <option value="4">3</option>
+                            <option value="5">4</option>
+                            <option value="6">5</option>
+                            <option value="7">6</option>
+                            <option value="8">7</option>
+                            <option value="9">8</option>
+                            <option value="10">9</option>
+                            <option value="11">0</option>
+                            <option value="12">MINUS</option>
+                            <option value="13">EQUALS</option>
+                            <option value="14">BACK</option>
+                            <option value="15">TAB</option>
+                            <option value="16">Q</option>
+                            <option value="17">W</option>
+                            <option value="18">E</option>
+                            <option value="19">R</option>
+                            <option value="20">T</option>
+                            <option value="21">Y</option>
+                            <option value="22">U</option>
+                            <option value="23">I</option>
+                            <option value="24">O</option>
+                            <option value="25">P</option>
+                            <option value="26">LBRACKET</option>
+                            <option value="27">RBRACKET</option>
+                            <option value="28">RETURN</option>
+                            <option value="29">LCONTROL</option>
+                            <option value="30">A</option>
+                            <option value="31">S</option>
+                            <option value="32">D</option>
+                            <option value="33">F</option>
+                            <option value="34">G</option>
+                            <option value="35">H</option>
+                            <option value="36">J</option>
+                            <option value="37">K</option>
+                            <option value="38">L</option>
+                            <option value="39">SEMICOLON</option>
+                            <option value="40">APOSTROPHE</option>
+                            <option value="41">GRAVE</option>
+                            <option value="42">LSHIFT</option>
+                            <option value="43">BACKSLASH</option>
+                            <option value="44">Z</option>
+                            <option value="45">X</option>
+                            <option value="46">C</option>
+                            <option value="47">V</option>
+                            <option value="48">B</option>
+                            <option value="49">N</option>
+                            <option value="50">M</option>
+                            <option value="51">COMMA</option>
+                            <option value="52">PERIOD</option>
+                            <option value="53">SLASH</option>
+                            <option value="54">RSHIFT</option>
+                            <option value="55">MULTIPLY</option>
+                            <option value="56">LMENU</option>
+                            <option value="57">SPACE</option>
+                            <option value="58">CAPITAL</option>
+                            <option value="59">F1</option>
+                            <option value="60">F2</option>
+                            <option value="61">F3</option>
+                            <option value="62">F4</option>
+                            <option value="63">F5</option>
+                            <option value="64">F6</option>
+                            <option value="65">F7</option>
+                            <option value="66">F8</option>
+                            <option value="67">F9</option>
+                            <option value="68">F10</option>
+                            <option value="69">NUMLOCK</option>
+                            <option value="70">SCROLL</option>
+                            <option value="71">NUMPAD7</option>
+                            <option value="72">NUMPAD8</option>
+                            <option value="73">NUMPAD9</option>
+                            <option value="74">SUBTRACT</option>
+                            <option value="75">NUMPAD4</option>
+                            <option value="76">NUMPAD5</option>
+                            <option value="77">NUMPAD6</option>
+                            <option value="78">ADD</option>
+                            <option value="79">NUMPAD1</option>
+                            <option value="80">NUMPAD2</option>
+                            <option value="81">NUMPAD3</option>
+                            <option value="82">NUMPAD0</option>
+                            <option value="83">DECIMAL</option>
+                            <option value="87">F11</option>
+                            <option value="88">F12</option>
+                            <option value="100">F13</option>
+                            <option value="101">F14</option>
+                            <option value="102">F15</option>
+                            <option value="103">F16</option>
+                            <option value="104">F17</option>
+                            <option value="105">F18</option>
+                            <option value="112">KANA</option>
+                            <option value="113">F19</option>
+                            <option value="121">CONVERT</option>
+                            <option value="123">NOCONVERT</option>
+                            <option value="125">YEN</option>
+                            <option value="141">NUMPADEQUALS</option>
+                            <option value="144">CIRCUMFLEX</option>
+                            <option value="145">AT</option>
+                            <option value="146">COLON</option>
+                            <option value="147">UNDERLINE</option>
+                            <option value="148">KANJI</option>
+                            <option value="149">STOP</option>
+                            <option value="150">AX</option>
+                            <option value="151">UNLABELED</option>
+                            <option value="156">NUMPADENTER</option>
+                            <option value="157">RCONTROL</option>
+                            <option value="167">SECTION</option>
+                            <option value="179">NUMPADCOMMA</option>
+                            <option value="181">DIVIDE</option>
+                            <option value="183">SYSRQ</option>
+                            <option value="184">RMENU</option>
+                            <option value="196">RFUNCTION</option>
+                            <option value="197">PAUSE</option>
+                            <option value="199">HOME</option>
+                            <option value="200">UP</option>
+                            <option value="201">PRIOR</option>
+                            <option value="203">LEFT</option>
+                            <option value="205">RIGHT</option>
+                            <option value="207">END</option>
+                            <option value="208">DOWN</option>
+                            <option value="209">NEXT</option>
+                            <option value="210">INSERT</option>
+                            <option value="211">DELETE</option>
+                            <option value="218">CLEAR</option>
+                            <option value="219">LMETA</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 12px">
+                        <label for="throwpot-bind" title="ThrowPot key bind">ThrowPot</label><br>
+                        <select name="throwpot-bind" id="throwpot-bind">
+                            <option value="1">ESCAPE</option>
+                            <option value="2">1</option>
+                            <option value="3">2</option>
+                            <option value="4">3</option>
+                            <option value="5">4</option>
+                            <option value="6">5</option>
+                            <option value="7">6</option>
+                            <option value="8">7</option>
+                            <option value="9">8</option>
+                            <option value="10">9</option>
+                            <option value="11">0</option>
+                            <option value="12">MINUS</option>
+                            <option value="13">EQUALS</option>
+                            <option value="14">BACK</option>
+                            <option value="15">TAB</option>
+                            <option value="16">Q</option>
+                            <option value="17">W</option>
+                            <option value="18">E</option>
+                            <option value="19">R</option>
+                            <option value="20">T</option>
+                            <option value="21">Y</option>
+                            <option value="22">U</option>
+                            <option value="23">I</option>
+                            <option value="24">O</option>
+                            <option value="25">P</option>
+                            <option value="26">LBRACKET</option>
+                            <option value="27">RBRACKET</option>
+                            <option value="28">RETURN</option>
+                            <option value="29">LCONTROL</option>
+                            <option value="30">A</option>
+                            <option value="31">S</option>
+                            <option value="32">D</option>
+                            <option value="33">F</option>
+                            <option value="34">G</option>
+                            <option value="35">H</option>
+                            <option value="36">J</option>
+                            <option value="37">K</option>
+                            <option value="38">L</option>
+                            <option value="39">SEMICOLON</option>
+                            <option value="40">APOSTROPHE</option>
+                            <option value="41">GRAVE</option>
+                            <option value="42">LSHIFT</option>
+                            <option value="43">BACKSLASH</option>
+                            <option value="44">Z</option>
+                            <option value="45">X</option>
+                            <option value="46">C</option>
+                            <option value="47">V</option>
+                            <option value="48">B</option>
+                            <option value="49">N</option>
+                            <option value="50">M</option>
+                            <option value="51">COMMA</option>
+                            <option value="52">PERIOD</option>
+                            <option value="53">SLASH</option>
+                            <option value="54">RSHIFT</option>
+                            <option value="55">MULTIPLY</option>
+                            <option value="56">LMENU</option>
+                            <option value="57">SPACE</option>
+                            <option value="58">CAPITAL</option>
+                            <option value="59">F1</option>
+                            <option value="60">F2</option>
+                            <option value="61">F3</option>
+                            <option value="62">F4</option>
+                            <option value="63">F5</option>
+                            <option value="64">F6</option>
+                            <option value="65">F7</option>
+                            <option value="66">F8</option>
+                            <option value="67">F9</option>
+                            <option value="68">F10</option>
+                            <option value="69">NUMLOCK</option>
+                            <option value="70">SCROLL</option>
+                            <option value="71">NUMPAD7</option>
+                            <option value="72">NUMPAD8</option>
+                            <option value="73">NUMPAD9</option>
+                            <option value="74">SUBTRACT</option>
+                            <option value="75">NUMPAD4</option>
+                            <option value="76">NUMPAD5</option>
+                            <option value="77">NUMPAD6</option>
+                            <option value="78">ADD</option>
+                            <option value="79">NUMPAD1</option>
+                            <option value="80">NUMPAD2</option>
+                            <option value="81">NUMPAD3</option>
+                            <option value="82">NUMPAD0</option>
+                            <option value="83">DECIMAL</option>
+                            <option value="87">F11</option>
+                            <option value="88">F12</option>
+                            <option value="100">F13</option>
+                            <option value="101">F14</option>
+                            <option value="102">F15</option>
+                            <option value="103">F16</option>
+                            <option value="104">F17</option>
+                            <option value="105">F18</option>
+                            <option value="112">KANA</option>
+                            <option value="113">F19</option>
+                            <option value="121">CONVERT</option>
+                            <option value="123">NOCONVERT</option>
+                            <option value="125">YEN</option>
+                            <option value="141">NUMPADEQUALS</option>
+                            <option value="144">CIRCUMFLEX</option>
+                            <option value="145">AT</option>
+                            <option value="146">COLON</option>
+                            <option value="147">UNDERLINE</option>
+                            <option value="148">KANJI</option>
+                            <option value="149">STOP</option>
+                            <option value="150">AX</option>
+                            <option value="151">UNLABELED</option>
+                            <option value="156">NUMPADENTER</option>
+                            <option value="157">RCONTROL</option>
+                            <option value="167">SECTION</option>
+                            <option value="179">NUMPADCOMMA</option>
+                            <option value="181">DIVIDE</option>
+                            <option value="183">SYSRQ</option>
+                            <option value="184">RMENU</option>
+                            <option value="196">RFUNCTION</option>
+                            <option value="197">PAUSE</option>
+                            <option value="199">HOME</option>
+                            <option value="200">UP</option>
+                            <option value="201">PRIOR</option>
+                            <option value="203">LEFT</option>
+                            <option value="205">RIGHT</option>
+                            <option value="207">END</option>
+                            <option value="208">DOWN</option>
+                            <option value="209">NEXT</option>
+                            <option value="210">INSERT</option>
+                            <option value="211">DELETE</option>
+                            <option value="218">CLEAR</option>
+                            <option value="219">LMETA</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 12px">
+                        <label for="refill-bind" title="Refill key bind">Refill</label><br>
+                        <select name="refill-bind" id="refill-bind">
+                            <option value="1">ESCAPE</option>
+                            <option value="2">1</option>
+                            <option value="3">2</option>
+                            <option value="4">3</option>
+                            <option value="5">4</option>
+                            <option value="6">5</option>
+                            <option value="7">6</option>
+                            <option value="8">7</option>
+                            <option value="9">8</option>
+                            <option value="10">9</option>
+                            <option value="11">0</option>
+                            <option value="12">MINUS</option>
+                            <option value="13">EQUALS</option>
+                            <option value="14">BACK</option>
+                            <option value="15">TAB</option>
+                            <option value="16">Q</option>
+                            <option value="17">W</option>
+                            <option value="18">E</option>
+                            <option value="19">R</option>
+                            <option value="20">T</option>
+                            <option value="21">Y</option>
+                            <option value="22">U</option>
+                            <option value="23">I</option>
+                            <option value="24">O</option>
+                            <option value="25">P</option>
+                            <option value="26">LBRACKET</option>
+                            <option value="27">RBRACKET</option>
+                            <option value="28">RETURN</option>
+                            <option value="29">LCONTROL</option>
+                            <option value="30">A</option>
+                            <option value="31">S</option>
+                            <option value="32">D</option>
+                            <option value="33">F</option>
+                            <option value="34">G</option>
+                            <option value="35">H</option>
+                            <option value="36">J</option>
+                            <option value="37">K</option>
+                            <option value="38">L</option>
+                            <option value="39">SEMICOLON</option>
+                            <option value="40">APOSTROPHE</option>
+                            <option value="41">GRAVE</option>
+                            <option value="42">LSHIFT</option>
+                            <option value="43">BACKSLASH</option>
+                            <option value="44">Z</option>
+                            <option value="45">X</option>
+                            <option value="46">C</option>
+                            <option value="47">V</option>
+                            <option value="48">B</option>
+                            <option value="49">N</option>
+                            <option value="50">M</option>
+                            <option value="51">COMMA</option>
+                            <option value="52">PERIOD</option>
+                            <option value="53">SLASH</option>
+                            <option value="54">RSHIFT</option>
+                            <option value="55">MULTIPLY</option>
+                            <option value="56">LMENU</option>
+                            <option value="57">SPACE</option>
+                            <option value="58">CAPITAL</option>
+                            <option value="59">F1</option>
+                            <option value="60">F2</option>
+                            <option value="61">F3</option>
+                            <option value="62">F4</option>
+                            <option value="63">F5</option>
+                            <option value="64">F6</option>
+                            <option value="65">F7</option>
+                            <option value="66">F8</option>
+                            <option value="67">F9</option>
+                            <option value="68">F10</option>
+                            <option value="69">NUMLOCK</option>
+                            <option value="70">SCROLL</option>
+                            <option value="71">NUMPAD7</option>
+                            <option value="72">NUMPAD8</option>
+                            <option value="73">NUMPAD9</option>
+                            <option value="74">SUBTRACT</option>
+                            <option value="75">NUMPAD4</option>
+                            <option value="76">NUMPAD5</option>
+                            <option value="77">NUMPAD6</option>
+                            <option value="78">ADD</option>
+                            <option value="79">NUMPAD1</option>
+                            <option value="80">NUMPAD2</option>
+                            <option value="81">NUMPAD3</option>
+                            <option value="82">NUMPAD0</option>
+                            <option value="83">DECIMAL</option>
+                            <option value="87">F11</option>
+                            <option value="88">F12</option>
+                            <option value="100">F13</option>
+                            <option value="101">F14</option>
+                            <option value="102">F15</option>
+                            <option value="103">F16</option>
+                            <option value="104">F17</option>
+                            <option value="105">F18</option>
+                            <option value="112">KANA</option>
+                            <option value="113">F19</option>
+                            <option value="121">CONVERT</option>
+                            <option value="123">NOCONVERT</option>
+                            <option value="125">YEN</option>
+                            <option value="141">NUMPADEQUALS</option>
+                            <option value="144">CIRCUMFLEX</option>
+                            <option value="145">AT</option>
+                            <option value="146">COLON</option>
+                            <option value="147">UNDERLINE</option>
+                            <option value="148">KANJI</option>
+                            <option value="149">STOP</option>
+                            <option value="150">AX</option>
+                            <option value="151">UNLABELED</option>
+                            <option value="156">NUMPADENTER</option>
+                            <option value="157">RCONTROL</option>
+                            <option value="167">SECTION</option>
+                            <option value="179">NUMPADCOMMA</option>
+                            <option value="181">DIVIDE</option>
+                            <option value="183">SYSRQ</option>
+                            <option value="184">RMENU</option>
+                            <option value="196">RFUNCTION</option>
+                            <option value="197">PAUSE</option>
+                            <option value="199">HOME</option>
+                            <option value="200">UP</option>
+                            <option value="201">PRIOR</option>
+                            <option value="203">LEFT</option>
+                            <option value="205">RIGHT</option>
+                            <option value="207">END</option>
+                            <option value="208">DOWN</option>
+                            <option value="209">NEXT</option>
+                            <option value="210">INSERT</option>
+                            <option value="211">DELETE</option>
+                            <option value="218">CLEAR</option>
+                            <option value="219">LMETA</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 12px">
+                        <label for="fakelag-bind" title="Fake Lag key bind">Fake Lag</label><br>
+                        <select name="fakelag-bind" id="fakelag-bind">
+                            <option value="1">ESCAPE</option>
+                            <option value="2">1</option>
+                            <option value="3">2</option>
+                            <option value="4">3</option>
+                            <option value="5">4</option>
+                            <option value="6">5</option>
+                            <option value="7">6</option>
+                            <option value="8">7</option>
+                            <option value="9">8</option>
+                            <option value="10">9</option>
+                            <option value="11">0</option>
+                            <option value="12">MINUS</option>
+                            <option value="13">EQUALS</option>
+                            <option value="14">BACK</option>
+                            <option value="15">TAB</option>
+                            <option value="16">Q</option>
+                            <option value="17">W</option>
+                            <option value="18">E</option>
+                            <option value="19">R</option>
+                            <option value="20">T</option>
+                            <option value="21">Y</option>
+                            <option value="22">U</option>
+                            <option value="23">I</option>
+                            <option value="24">O</option>
+                            <option value="25">P</option>
+                            <option value="26">LBRACKET</option>
+                            <option value="27">RBRACKET</option>
+                            <option value="28">RETURN</option>
+                            <option value="29">LCONTROL</option>
+                            <option value="30">A</option>
+                            <option value="31">S</option>
+                            <option value="32">D</option>
+                            <option value="33">F</option>
+                            <option value="34">G</option>
+                            <option value="35">H</option>
+                            <option value="36">J</option>
+                            <option value="37">K</option>
+                            <option value="38">L</option>
+                            <option value="39">SEMICOLON</option>
+                            <option value="40">APOSTROPHE</option>
+                            <option value="41">GRAVE</option>
+                            <option value="42">LSHIFT</option>
+                            <option value="43">BACKSLASH</option>
+                            <option value="44">Z</option>
+                            <option value="45">X</option>
+                            <option value="46">C</option>
+                            <option value="47">V</option>
+                            <option value="48">B</option>
+                            <option value="49">N</option>
+                            <option value="50">M</option>
+                            <option value="51">COMMA</option>
+                            <option value="52">PERIOD</option>
+                            <option value="53">SLASH</option>
+                            <option value="54">RSHIFT</option>
+                            <option value="55">MULTIPLY</option>
+                            <option value="56">LMENU</option>
+                            <option value="57">SPACE</option>
+                            <option value="58">CAPITAL</option>
+                            <option value="59">F1</option>
+                            <option value="60">F2</option>
+                            <option value="61">F3</option>
+                            <option value="62">F4</option>
+                            <option value="63">F5</option>
+                            <option value="64">F6</option>
+                            <option value="65">F7</option>
+                            <option value="66">F8</option>
+                            <option value="67">F9</option>
+                            <option value="68">F10</option>
+                            <option value="69">NUMLOCK</option>
+                            <option value="70">SCROLL</option>
+                            <option value="71">NUMPAD7</option>
+                            <option value="72">NUMPAD8</option>
+                            <option value="73">NUMPAD9</option>
+                            <option value="74">SUBTRACT</option>
+                            <option value="75">NUMPAD4</option>
+                            <option value="76">NUMPAD5</option>
+                            <option value="77">NUMPAD6</option>
+                            <option value="78">ADD</option>
+                            <option value="79">NUMPAD1</option>
+                            <option value="80">NUMPAD2</option>
+                            <option value="81">NUMPAD3</option>
+                            <option value="82">NUMPAD0</option>
+                            <option value="83">DECIMAL</option>
+                            <option value="87">F11</option>
+                            <option value="88">F12</option>
+                            <option value="100">F13</option>
+                            <option value="101">F14</option>
+                            <option value="102">F15</option>
+                            <option value="103">F16</option>
+                            <option value="104">F17</option>
+                            <option value="105">F18</option>
+                            <option value="112">KANA</option>
+                            <option value="113">F19</option>
+                            <option value="121">CONVERT</option>
+                            <option value="123">NOCONVERT</option>
+                            <option value="125">YEN</option>
+                            <option value="141">NUMPADEQUALS</option>
+                            <option value="144">CIRCUMFLEX</option>
+                            <option value="145">AT</option>
+                            <option value="146">COLON</option>
+                            <option value="147">UNDERLINE</option>
+                            <option value="148">KANJI</option>
+                            <option value="149">STOP</option>
+                            <option value="150">AX</option>
+                            <option value="151">UNLABELED</option>
+                            <option value="156">NUMPADENTER</option>
+                            <option value="157">RCONTROL</option>
+                            <option value="167">SECTION</option>
+                            <option value="179">NUMPADCOMMA</option>
+                            <option value="181">DIVIDE</option>
+                            <option value="183">SYSRQ</option>
+                            <option value="184">RMENU</option>
+                            <option value="196">RFUNCTION</option>
+                            <option value="197">PAUSE</option>
+                            <option value="199">HOME</option>
+                            <option value="200">UP</option>
+                            <option value="201">PRIOR</option>
+                            <option value="203">LEFT</option>
+                            <option value="205">RIGHT</option>
+                            <option value="207">END</option>
+                            <option value="208">DOWN</option>
+                            <option value="209">NEXT</option>
+                            <option value="210">INSERT</option>
+                            <option value="211">DELETE</option>
+                            <option value="218">CLEAR</option>
+                            <option value="219">LMETA</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="self-destruct-bind" title="Self Destruct key bind">Self Destruct</label><br>
+                        <select name="self-destruct-bind" id="self-destruct-bind">
+                            <option value="1">ESCAPE</option>
+                            <option value="2">1</option>
+                            <option value="3">2</option>
+                            <option value="4">3</option>
+                            <option value="5">4</option>
+                            <option value="6">5</option>
+                            <option value="7">6</option>
+                            <option value="8">7</option>
+                            <option value="9">8</option>
+                            <option value="10">9</option>
+                            <option value="11">0</option>
+                            <option value="12">MINUS</option>
+                            <option value="13">EQUALS</option>
+                            <option value="14">BACK</option>
+                            <option value="15">TAB</option>
+                            <option value="16">Q</option>
+                            <option value="17">W</option>
+                            <option value="18">E</option>
+                            <option value="19">R</option>
+                            <option value="20">T</option>
+                            <option value="21">Y</option>
+                            <option value="22">U</option>
+                            <option value="23">I</option>
+                            <option value="24">O</option>
+                            <option value="25">P</option>
+                            <option value="26">LBRACKET</option>
+                            <option value="27">RBRACKET</option>
+                            <option value="28">RETURN</option>
+                            <option value="29">LCONTROL</option>
+                            <option value="30">A</option>
+                            <option value="31">S</option>
+                            <option value="32">D</option>
+                            <option value="33">F</option>
+                            <option value="34">G</option>
+                            <option value="35">H</option>
+                            <option value="36">J</option>
+                            <option value="37">K</option>
+                            <option value="38">L</option>
+                            <option value="39">SEMICOLON</option>
+                            <option value="40">APOSTROPHE</option>
+                            <option value="41">GRAVE</option>
+                            <option value="42">LSHIFT</option>
+                            <option value="43">BACKSLASH</option>
+                            <option value="44">Z</option>
+                            <option value="45">X</option>
+                            <option value="46">C</option>
+                            <option value="47">V</option>
+                            <option value="48">B</option>
+                            <option value="49">N</option>
+                            <option value="50">M</option>
+                            <option value="51">COMMA</option>
+                            <option value="52">PERIOD</option>
+                            <option value="53">SLASH</option>
+                            <option value="54">RSHIFT</option>
+                            <option value="55">MULTIPLY</option>
+                            <option value="56">LMENU</option>
+                            <option value="57">SPACE</option>
+                            <option value="58">CAPITAL</option>
+                            <option value="59">F1</option>
+                            <option value="60">F2</option>
+                            <option value="61">F3</option>
+                            <option value="62">F4</option>
+                            <option value="63">F5</option>
+                            <option value="64">F6</option>
+                            <option value="65">F7</option>
+                            <option value="66">F8</option>
+                            <option value="67">F9</option>
+                            <option value="68">F10</option>
+                            <option value="69">NUMLOCK</option>
+                            <option value="70">SCROLL</option>
+                            <option value="71">NUMPAD7</option>
+                            <option value="72">NUMPAD8</option>
+                            <option value="73">NUMPAD9</option>
+                            <option value="74">SUBTRACT</option>
+                            <option value="75">NUMPAD4</option>
+                            <option value="76">NUMPAD5</option>
+                            <option value="77">NUMPAD6</option>
+                            <option value="78">ADD</option>
+                            <option value="79">NUMPAD1</option>
+                            <option value="80">NUMPAD2</option>
+                            <option value="81">NUMPAD3</option>
+                            <option value="82">NUMPAD0</option>
+                            <option value="83">DECIMAL</option>
+                            <option value="87">F11</option>
+                            <option value="88">F12</option>
+                            <option value="100">F13</option>
+                            <option value="101">F14</option>
+                            <option value="102">F15</option>
+                            <option value="103">F16</option>
+                            <option value="104">F17</option>
+                            <option value="105">F18</option>
+                            <option value="112">KANA</option>
+                            <option value="113">F19</option>
+                            <option value="121">CONVERT</option>
+                            <option value="123">NOCONVERT</option>
+                            <option value="125">YEN</option>
+                            <option value="141">NUMPADEQUALS</option>
+                            <option value="144">CIRCUMFLEX</option>
+                            <option value="145">AT</option>
+                            <option value="146">COLON</option>
+                            <option value="147">UNDERLINE</option>
+                            <option value="148">KANJI</option>
+                            <option value="149">STOP</option>
+                            <option value="150">AX</option>
+                            <option value="151">UNLABELED</option>
+                            <option value="156">NUMPADENTER</option>
+                            <option value="157">RCONTROL</option>
+                            <option value="167">SECTION</option>
+                            <option value="179">NUMPADCOMMA</option>
+                            <option value="181">DIVIDE</option>
+                            <option value="183">SYSRQ</option>
+                            <option value="184">RMENU</option>
+                            <option value="196">RFUNCTION</option>
+                            <option value="197">PAUSE</option>
+                            <option value="199">HOME</option>
+                            <option value="200">UP</option>
+                            <option value="201">PRIOR</option>
+                            <option value="203">LEFT</option>
+                            <option value="205">RIGHT</option>
+                            <option value="207">END</option>
+                            <option value="208">DOWN</option>
+                            <option value="209">NEXT</option>
+                            <option value="210">INSERT</option>
+                            <option value="211">DELETE</option>
+                            <option value="218">CLEAR</option>
+                            <option value="219">LMETA</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="plugins" role="tabpanel" aria-labelledby="plugins-tab">
+                <h4 title="The plugin system allows you to write your own code in Java to be compiled and loaded into the session. This is unfinished.">Plugins <span style="color: red"><b>(Beta)</b></span></h4>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="plugins-enabled">
+                    <label class="form-check-label" for="plugins-enabled" title="Enable Plugins">Enabled</label>
+                </div>
+                <div>
+                	<label for="plugins-java-code" title="Java code to be compiled when the client is first loaded.">Java Code</label><br>
+                    <textarea id="plugins-java-code" style="width: 98%; height: 500px"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="javascripts/jquery-3.4.1.min.js"></script>
+<script src="javascripts/bootstrap.bundle.min.js"></script>
+<script src="javascripts/jquery-ui.min.js"></script>
+<script>
+    $(function() {
+        $(document).tooltip({
+        	show: {
+        		effect: "slideDown",
+        	},
+            track: true
+        });
+        var lastConfig;
+        var lastPlayers;
+        var lastPlugins;
+        var timeout = 5000;
+        function applyFrontend() {
+	        $.ajax({
+	        	url: "config",
+	        	type: "GET",
+	        	dataType: "text",
+	        	success: function(data) {
+	        		if(lastConfig !== data) {
+		        		lastConfig = data;
+		        		var values = data.split(";");
+		        		$("#autoclicker-bind").val(values[0]);
+		        		$("#aimbot-bind").val(values[1]);
+		        		$("#nametags-bind").val(values[2]);
+		        		$("#brightness-bind").val(values[3]);
+		        		$("#reach-bind").val(values[4]);
+		        		$("#hitboxes-bind").val(values[5]);
+                        $("#velocity-bind").val(values[6]);
+						$("#fakelag-bind").val(values[7]);
+		        		$("#wtap-bind").val(values[8]);
+		        		$("#self-destruct-bind").val(values[9]);
+		        		$("#HUD-bind").val(values[10]);
+		        		$("#throwpot-bind").val(values[11]);
+		        		$("#refill-bind").val(values[12]);
+                        check(values[13], "#autoclicker-enabled");
+                        check(values[14], "#aimbot-enabled");
+                        check(values[15], "#nametags-enabled");
+                        check(values[16], "#brightness-enabled");
+                        check(values[17], "#reach-enabled");
+                        check(values[18], "#hitboxes-enabled");
+                        check(values[19], "#velocity-enabled");
+                        check(values[20], "#fakelag-enabled");
+                        check(values[21], "#wtap-enabled");
+                        check(values[23], "#HUD-enabled");
+                        check(values[24], "#plugins-enabled");
+                        check(values[25], "#autoclicker-req-item");
+                        check(values[26], "#aimbot-req-item");
+                        check(values[27], "#reach-req-item");
+                        check(values[28], "#reach-req-sprint");
+                        check(values[29], "#hitboxes-req-item");
+                        check(values[30], "#hitboxes-req-sprint");
+                        check(values[31], "#velocity-req-sprint");
+                        check(values[32], "#wtap-req-item");
+                        $("#autoclicker-item-whitelist").val(values[33]);
+                        $("#aimbot-item-whitelist").val(values[34]);
+                        $("#reach-item-whitelist").val(values[35]);
+                        $("#hitboxes-item-whitelist").val(values[36]);
+                        $("#wtap-item-whitelist").val(values[37]);
+                        setRangeSlider("#autoclicker-CPS", values[38], values[39], 1.0, 20.0, 0.1);
+                        setSlider("#aimbot-dist", values[40], 0.1, 6.0, 0.1);
+                        setSlider("#aimbot-fov", values[41], 1, 180, 1);
+                        check(values[42], "#aimbot-req-mouse");
+		        		$("#aimbot-target").val(values[43]);
+		        		setRangeSlider("#aimbot-yaw-smooth", values[44], values[45], 1, 20, 0.1);
+		        		setRangeSlider("#aimbot-pitch-smooth", values[46], values[47], 1, 20, 0.1);
+		        		setRangeSlider("#aimbot-delay", values[48], values[49], 1, 1000, 1);
+		        		setRangeSlider("#aimbot-rand-point", values[50], values[51], 1, 1000, 1);
+		        		setSlider("#aimbot-points-scale", values[52], 0.01, 1, 0.01);
+		        		setRangeSlider("#reach-expansion", values[53], values[54], 0, 1, 0.01);
+		        		setSlider("#hitboxes-expansion", values[55], 0.01, 1, 0.01);
+                        setSlider("#velocity-chance", values[56], 1, 100, 1);
+                        setSlider("#velocity-x", values[57], 0, 2, 0.01);
+                        setSlider("#velocity-y", values[58], 0, 2, 0.01);
+                        setSlider("#velocity-z", values[59], 0, 2, 0.01);
+                        setSlider("#fakelag-dist", values[60], 0.1, 6.0, 0.1);
+                        setSlider("#fakelag-fov", values[61], 1, 180, 1);
+                        setRangeSlider("#fakelag-packet-delay", values[62], values[63], 1, 1000, 1);
+		        		setSlider("#wtap-dist", values[64], 0.1, 6.0, 0.1);
+		        		setSlider("#wtap-fov", values[65], 1, 180, 1);
+		        		setRangeSlider("#wtap-tap-delay", values[66], values[67], 1, 1000, 1);
+		        		setRangeSlider("#throwpot-throw-delay", values[68], values[69], 1, 1000, 1);
+		        		setRangeSlider("#refill-fill-delay", values[70], values[71], 1, 1000, 1);
+		        		setRangeSlider("#refill-exit-delay", values[72], values[73], 1, 1000, 1);
+		        		setSlider("#refresh-rate", values[74], 1, 10, 1);
+		        		timeout = values[74] * 1000;
+		        	}
+	        	}
+	        });
+			$.ajax({
+				url: "players",
+				type: "GET",
+	        	dataType: "text",
+	        	success: function(data) {
+	        		if(lastPlayers !== data) {
+		        		lastPlayers = data;
+		        		var values = data.split(";");
+			        	$("#friends").val(values[0]);
+			        	$("#enemies").val(values[1]);
+			        }
+	        	}
+			});
+			$.ajax({
+				url: "plugins",
+				type: "GET",
+	        	dataType: "text",
+	        	success: function(data) {
+	        		if(lastPlugins !== data) {
+		        		lastPlugins = data;
+			        	$("#plugins-java-code").val(data);
+			        }
+	        	}
+			});
+	        setTimeout(applyFrontend, timeout);
+        }
+        applyFrontend();
+        setTimeout(applyFrontend, timeout);
+        function applyBackend() {
+            $.ajax({
+                url: "/apply",
+                type: "POST",
+                data: {config: $("#autoclicker-bind").val() + ";" + $("#aimbot-bind").val() + ";" + $("#nametags-bind").val() + ";" + $("#brightness-bind").val() + ";" + $("#reach-bind").val() + ";" + $("#hitboxes-bind").val() + ";" + $("#velocity-bind").val() + ";" + $("#fakelag-bind").val() + ";" + $("#wtap-bind").val() + ";" + $("#self-destruct-bind").val() + ";" + $("#HUD-bind").val() + ";" + $("#throwpot-bind").val() + ";" + $("#refill-bind").val() + ";" + checkboxToNum("#autoclicker-enabled") + ";" + checkboxToNum("#aimbot-enabled") + ";" + checkboxToNum("#nametags-enabled") + ";" + checkboxToNum("#brightness-enabled") + ";" + checkboxToNum("#reach-enabled") + ";" + checkboxToNum("#hitboxes-enabled") + ";" + checkboxToNum("#velocity-enabled") + ";" + checkboxToNum("#fakelag-enabled") + ";" + checkboxToNum("#wtap-enabled") + ";0;" + checkboxToNum("#HUD-enabled") + ";" + checkboxToNum("#plugins-enabled") + ";" + checkboxToNum("#autoclicker-req-item") + ";" + checkboxToNum("#aimbot-req-item") + ";" + checkboxToNum("#reach-req-item") + ";" + checkboxToNum("#reach-req-sprint") + ";" + checkboxToNum("#hitboxes-req-item") + ";" + checkboxToNum("#hitboxes-req-sprint") + ";" + checkboxToNum("#velocity-req-sprint") + ";" + checkboxToNum("#wtap-req-item") + ";" + $("#autoclicker-item-whitelist").val() + ";" + $("#aimbot-item-whitelist").val() + ";" + $("#reach-item-whitelist").val() + ";" + $("#hitboxes-item-whitelist").val() + ";" + $("#wtap-item-whitelist").val() + ";" + $("#autoclicker-CPS").slider("values")[0] + ";" + $("#autoclicker-CPS").slider("values")[1] + ";" + $("#aimbot-dist").slider("value") + ";" + $("#aimbot-fov").slider("value") + ";" + checkboxToNum("#aimbot-req-mouse") + ";" + $("#aimbot-target").val() + ";" + $("#aimbot-yaw-smooth").slider("values")[0] + ";" + $("#aimbot-yaw-smooth").slider("values")[1] + ";" + $("#aimbot-pitch-smooth").slider("values")[0] + ";" + $("#aimbot-pitch-smooth").slider("values")[1] + ";" + $("#aimbot-delay").slider("values")[0] + ";" + $("#aimbot-delay").slider("values")[1] + ";" + $("#aimbot-rand-point").slider("values")[0] + ";" + $("#aimbot-rand-point").slider("values")[1] + ";" + $("#aimbot-points-scale").slider("value") + ";" + $("#reach-expansion").slider("values")[0] + ";" + $("#reach-expansion").slider("values")[1] + ";" + $("#hitboxes-expansion").slider("value") + ";" + $("#velocity-chance").slider("value") + ";" + $("#velocity-x").slider("value") + ";" + $("#velocity-y").slider("value") + ";" + $("#velocity-z").slider("value") + ";" + $("#fakelag-dist").slider("value") + ";" + $("#fakelag-fov").slider("value") + ";" + $("#fakelag-packet-delay").slider("values")[0] + ";" + $("#fakelag-packet-delay").slider("values")[1] + ";" + $("#wtap-dist").slider("value") + ";" + $("#wtap-fov").slider("value") + ";" + $("#wtap-tap-delay").slider("values")[0] + ";" + $("#wtap-tap-delay").slider("values")[1] + ";" + $("#throwpot-throw-delay").slider("values")[0] + ";" + $("#throwpot-throw-delay").slider("values")[1] + ";" + $("#refill-fill-delay").slider("values")[0] + ";" + $("#refill-fill-delay").slider("values")[1] + ";" + $("#refill-exit-delay").slider("values")[0] + ";" + $("#refill-exit-delay").slider("values")[1] + ";" + $("#refresh-rate").slider("value"), players: $("#friends").val() + ";" + $("#enemies").val(), plugins: $("#plugins-java-code").val()},
+                success: function(res) {
+                    alert(res);
+                }
+            });
+        }
+        $("#apply").click(applyBackend);
+        $("body").keypress(function(event) {
+            if(event.which == 13 && !$("textarea").is(":focus")) {
+                event.preventDefault();
+                applyBackend();
+            }
+        });
+        $("#self-destruct").click(function() {
+            var agreement = confirm("Are you sure?");
+            if(agreement) {
+                $.ajax({
+                    url: "/self-destruct",
+                    type: "POST",
+                    success: function(res) {
+                        alert(res);
+                    }
+                });
+            }
+        });
+        function check(local, ID) {
+            $(ID).prop("checked", local == 1);
+        }
+        function setRangeSlider(sliderID, minValue, maxValue, min, max, step) {
+            var labelID = sliderID + "-label";
+            $(sliderID).slider({
+                range: true,
+                min: min,
+                max: max,
+                step: step,
+                values: [minValue, maxValue],
+                slide: function (event, ui) {
+                    $(labelID).val("" + ui.values[0] + " - " + ui.values[1]);
+                }
+            });
+            $(labelID).val("" + $(sliderID).slider("values", 0) +
+                " - " + $(sliderID).slider("values", 1));
+        }
+        function setSlider(sliderID, value, min, max, step) {
+            var labelID = sliderID + "-label";
+            $(sliderID).slider({
+                range: "max",
+                min: min,
+                max: max,
+                step: step,
+                value: value,
+                slide: function (event, ui) {
+                    $(labelID).val(ui.value);
+                }
+            });
+            $(labelID).val($(sliderID).slider("value"));
+        }
+        function checkboxToNum(ID) {
+            return $(ID).prop("checked") ? 1 : 0;
+        }
+    });
+</script>
+</body>
+</html>
