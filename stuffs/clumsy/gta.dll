@@ -1,0 +1,48 @@
+[NOTE](2) Init Data
+	[string]: 3857A290BE6C65FCE8BCDA275C4E1A2A132E1FDF3055B92E342D83AC72BA6153
+	[string]: BA380F1E9D56247C
+
+
+[NOTE](2) Modules
+	[string]: Grand Theft Auto V.dll##
+	[data]: Grand Theft Auto V.dll
+
+
+[NOTE](1) Injection requested
+	[char * __ptr64]: Grand Theft Auto V.dll
+
+
+[NOTE](0) module found
+
+
+[NOTE](0) Streaming module
+
+
+[NOTE](1) Waiting for process
+	[string]: clumsy.exe
+
+
+[SUCCESS](1) process id found
+	[int]: 1716
+
+
+[SUCCESS](1) opened handled to process
+	[void * __ptr64]: unknown type
+
+
+[NOTE](1) is WoW64
+	[bool]: false
+
+
+[NOTE](0) Attached to process
+
+
+[NOTE](1) LoadLibraryA address
+	[unsigned __int64]: 140732667327744
+
+
+[SUCCESS](1) LoadLibraryA Injection Succeeded
+	[string]: 
+
+
+[NOTE](0) Injection succeeded
